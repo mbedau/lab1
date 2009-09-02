@@ -1,0 +1,23 @@
+Use terminal mode, put the files in some directory where you want to keep your work.
+
+chdir [drag folder into terminal window] <CR>
+
+You should have the files:
+doc2freq.py 		- the Python script
+patentsample.txt 	- a text file with many patents in it
+				WHAT IS IN THAT FILE?
+
+Make doc2freq execut
+	chmod 777 doc2freq
+
+Examine the file patentsample.txt ... Describe what it is
+
+Use document_to_frequency.py to create the frequency table:
+python doc2freq.py patentsample.txt
+
+This should create a new file (patentsample.tsv) in the same directory. Look at this file (using TextEdit) and describe what it is.
+
+Use the zipf.r to plot the resulting frequncy data:
+Rscript zipf.r patentsample.tsv
+
+

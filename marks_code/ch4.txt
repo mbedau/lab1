@@ -1,0 +1,1967 @@
+ 16,000 words
+
+notes at end
+
+
+
+
+
+
+
+Chapter 4
+												
+
+Empirical waves of adaptations
+
+
+
+
+
+
+
+
+
+	Adaptive evolutionary explanations are familiar to all of us. It is a cliché to 
+explain the giraffe's long neck as an adaptation for browsing among the tree 
+tops. But the scientific legitimacy of adaptive explanations is controversial, and it 
+became inflamed about thirty years ago when Stephen Jay Gould and Richard 
+Lewontin published "The Spandrals of San Marco and the Panglossian 
+Paradigm: A Critique of the Adaptationist Programme." This paper has 
+generated more discussion than any other single paper in the philosophy of 
+biology, and the controversy remains unresolved.
+	This chapter defends the scientific legitimacy of adaptive explanations in a 
+new way. The controversy over adaptationism is so persistent in part because the 
+most fundamental challenge raised by Gould and Lewontin has not been directly 
+addressed. Instead, responses typically concede Gould and Lewontin's  
+fundamental criticism: the lack of an empirical test for whether it is proper to 
+seek an adaptive explanation to begin with (see below). So, a new empirical way 
+to tell whether something is an adaptation would provide a new defense of 
+adaptationism. In this chapter I explain such a test and illustrate it in two 
+computational evolving systems. 
+
+
+
+
+The problem of adaptationism
+
+	I must first clarify some key concepts. The notion of how well an organism 
+fits or is adapted to its environment is the organism's adaptedness in that 
+environment. This notion is typically made more concrete as the organism's 
+propensity to survive and reproduce or the organism's fitness relative to other 
+organisms. A trait is adaptive (in an environment) just in case it benefits the 
+organism (in that environment), i.e., it increases the organism's propensity to 
+survive or reproduce. Optimal traits are those that (in the context and given a set 
+of constraints) could not be more adaptive. 
+	In order to explain the notion of an adaptation, it is helpful to distinguish 
+selection of a trait from selection for the trait (Sober 1984). Consider an analogy 
+involving not natural selection but a simple causal sorting process. Suppose there 
+is a tray full of black and white marbles, with the black marbles made of iron and 
+the white marbles made of plastic. If a strong magnet is held over the tray, the 
+black ferrous marbles will be "selected" by the magnet. This illustrates 
+"selection" of black marbles but not "selection" for black marbles, for the marbles 
+were not "selected" because they were black; their color was irrelevant. At the 
+same time, this is an example of "selection" for ferrous marbles, for being ferrous 
+was what caused those marbles to be "selected." Now consider the operation of 
+natural selection in an analogous situation. An inherited trait persisting in a 
+varying population because of its benefit to survival or reproduction is an 
+example of natural selection for a trait. By contrast, mere selection of a trait is 
+when natural selection causes a trait to persist but not because of its beneficial 
+effects. Genetic hitchhikers (discussed below) illustrate selection of but not for a 
+trait.
+	Now we can distinguish two notions of adaptation. The first kind of 
+adaptation is a trait produced by the process of natural selection for that trait. For 
+example, the whale's fins are an adaptation for swimming.  The trait persists due 
+to natural selection because of its function in swimming; it is a product of the 
+process of natural selection. 
+	Not all adaptive traits are adaptations. As Williams pointed out 
+generations ago (1966), it is far more difficult to determine that some trait is an 
+adaptation than that it performs some adaptive function. The notion of being an 
+adaptation is backward looking; it concerns the explanation for how the trait 
+came to be there. The notion of being adaptive focuses on the present; it concerns 
+what benefits the trait happens to bestow, regardless of whether that benefit 
+plays any role in the explanation of the trait's presence. 
+	The second kind of adaptation is the process of producing adaptations, as 
+when we speak of the adaptation of a population to its environment by means of 
+natural selection,  sometimes called adaptive evolution. The fundamental 
+problem of adaptationism (I shall suggest) is to provide an empirical test for 
+detecting when the evolutionary process produces adaptations.
+	There is a controversy about how far back into the past selective 
+explanations must reach for a trait to be an adaptation. Gould and Vrba (1982) 
+called attention to this issue with the neologism 'exaptation', which refers to an 
+item that now performs one function but which originated to perform either a 
+different function or no function. (The traditional biological term for these items 
+is 'preadaptation'.) Some think that an adaptation for some function must have 
+originally arisen by natural selection to perform that function. For these people 
+exaptations are not adaptations (Gould and Lewontin 1978, Gould and Vrba 
+1982, Sober 1984). Others think that it is sufficient for a trait to be an adaptation if 
+its recent persistence is due to natural selection. For these people an exaptation 
+can be an adaptation (Brandon 1990, Kitcher 1993, Godfrey-Smith 1994b, Sterelny 
+and Griffiths 1999). 
+	Behind this semantic disagreement about whether exaptations are 
+"adaptations," everyone agrees that exaptations exist and that natural selection 
+can maintain an item because of the function it now performs, even if the item 
+did not originate for that reason. As a matter of semantics, I view exaptations as a 
+special subset of adaptations, because I view anything maintained because of 
+selection for a function as an adaptation. Regardless of their semantic 
+classification, exaptations highlight that items can acquire new functions and be 
+maintained by natural selection because of those new functions. Any attempt to 
+explain the process of adaptive evolution must allow and explain exaptations. 
+(Exaptations arise again below.)
+	Traits of individual organisms are the paradigm example of adaptations, 
+the products of natural selection.  A trait is adaptive only relative to an 
+environment, and that environment typically includes other evolving organisms. 
+So the environment for adaptation might itself be changed by the process of 
+adaptive evolution. We can apply the property of being an adaptation to other 
+levels of analysis by averaging over traits and individuals. In particular, below I 
+will talk of genotypes (a complete set of traits) as adaptations and as adaptive. A 
+genotype is adaptive if on average individuals with that genotype are adaptive. 
+A genotype is an adaptation if it is persists through the action of natural 
+selection, that is, if on average the individuals with that genotype have been 
+selected for their possession of that genotype, i.e., if the traits in that genotype 
+are adaptations.
+	Later in this chapter some more terminology will become central. An 
+adaptive explanation of a trait explains its existence or persistence as a result of 
+adaptive evolution, i.e., by means of natural selection for that trait.   An adaptive 
+explanation of a trait presumes that the trait is an adaptation, of course, and I 
+will call this the adaptive presupposition of the adaptive explanation. Finally, 
+adaptationism is the thesis that the activity of pursuing adaptive explanations of 
+the existence and nature of biological traits is a normal and legitimate part of 
+empirical science. (I sometimes refer to adaptationism as empirical 
+adaptationism, to emphasize how it differs from other theses about adaptations.)
+	Adaptationism has meant different things to different people. Historically, 
+most of the discussion of adaptationism has concerned the use of optimality 
+models (and related models) for explaining adaptations (e.g., Dupré 1987, Orzak 
+and Sober 1994, Orzack and Sober 2001). But the thesis of adaptationism 
+transcends optimality and concerns any kind of adaptive evolutionary 
+explanation. Even if optimality is regularly violated, adaptive evolutionary 
+explanations are part of the normal legitimate fabric of empirical biology. 
+
+Elliot Sober (Sober 1987, 1993, Orzack and Sober 1994) has carefully defined a 
+thesis that he calls "adaptationism" but it differs from what I mean by that term. 
+Sober's thesis is that adaptive explanations are sufficient to explain most 
+(nonmolecular) traits in most populations—a thesis which could fairly be called 
+panadaptationism (not Sober's term). Panadaptationism is a strong thesis in two 
+ways: (1) it entails that natural selection explains most (nonmolecular) traits in 
+most populations, and (2) it claims that natural selection plays the only 
+important role in the explanation of those traits. My thesis of adaptationism 
+entails neither (1) nor (2). The practice of giving adaptive explanations can be a 
+normal and legitimate part of empirical science without most traits of most 
+organisms being explained primarily by natural selection. Adaptationism 
+requires only that some traits can be explained as adaptations through empirical 
+methods. Unlike panadaptationism, adaptationism is pluralistic; it allows other 
+factors besides natural selection to play a dominant role in explaining many 
+traits. What adaptationism requires, though, is that the adaptive explanations be 
+part of normal empirical science. Panadaptationism is interesting empirical thesis 
+that I expect will remain an open question for many years. In contrast we can 
+settle adaptationism today.
+	We need to distinguish adaptationism from two additional theses.  One is 
+the claim—which I call limited adaptationism—that natural selection is the only 
+satisfactory explanation of some limited set of traits. The special traits often are 
+especially striking products of evolution such as complex adaptive structures like 
+the eye or the brain. Richard Dawkins (1987) is a good example of this view. 
+Limited adaptationism is consistent with and tends to be supported by 
+panadaptationism. Strictly speaking, adaptationism takes no stand on which 
+specific traits are adaptations; it just requires that we can distinguish adaptations 
+from non-adaptations and support adaptive explanations with normal empirical 
+science. Adaptationism lets the adaptive chips fall where they may and has 
+empirical science identify them. 
+	A further claim—sometimes called methodological adaptationism—holds 
+that the best way to come to understand evolutionary phenomena is by 
+assuming the prevalence of adaptations and looking for good design in order to, 
+among other things, notice deviations from such designs and thereby to infer 
+evolutionary constraints. This view can be found in Maynard Smith's discussions 
+involving optimization models: "in testing a model we are not testing the general 
+proposition that nature optimizes, but the specific hypotheses about constraints, 
+optimization criteria, and heredity" (Maynard Smith 1978, quoted in Dawkins 
+1982, p. 49). In contrast, adaptationism itself does not claim that it is heuristically 
+valuable to view nature through adaptive lenses. Rather, it claims that the 
+appropriate empirical lenses reveal how natural selection actually shapes 
+evolutionary processes. 
+	I am not criticizing panadaptationism and limited and methodological 
+adaptationism. Rather, I am distinguishing them from adaptationism itself. I 
+think that the fundamental challenge for adaptationism raised by Gould and 
+Lewontin has not been appreciated in part because panadaptationism, limited 
+adaptationism, and methodological adaptationism have distracted attention from 
+the central issue—which is adaptationism itself.
+
+"The Spandrals of San Marco and the Panglossian Paradigm" called attention to 
+various problems with adaptationism. It is largely uncontroversial that some 
+traits are adaptations; the problem is to identify them or, more generally, to 
+distinguish adaptive evolution from other kinds of evolutionary processes. 
+Gould and Lewontin aim to reign in adaptive explanations where they are 
+inappropriate. To achieve this goal, one needs some principled and rigorous way 
+to tell when adaptive explanations are needed. Gould and Lewontin raise two 
+related worries about the prospect of accomplishing this goal.
+	Their first worry is that people who use adaptive explanations do not 
+sufficiently justify them over their alternatives. And there are significant 
+alternatives to adaptive explanations, such as appeals to architectural constraint 
+or genetic drift. For example, tooth size is architecturally constrained to be 
+proportional to body size. So there is no need to seek an adaptive explanation for 
+why the teeth of a large ape like the gorilla are larger than those of a small 
+monkey like the rhesus. Furthermore, teeth grow more slowly than the other 
+bones in the body, so it would be wrong to look for an adaptive explanation for 
+the proportionately smaller than teeth of gorillas compared to smaller mammals 
+(Lewontin 1977, p. 81). The architectural explanation suffices in these cases.  
+Gould and Lewontin object that the alternatives to adaptive explanations get 
+only lip-service. If one adaptive explanation fails, this simply leads to the 
+proposal of another. They criticize this as adaptive "just-so" story telling, 
+constrained by only our imagination. With enough ingenuity, any trait can be 
+given an adaptive explanation. The presupposition that a trait is an adaptation is 
+not called into question or tested but treated as untestable. As Lewontin puts it, 
+"the adaptationist program makes of adaptation a metaphysical postulate that … 
+cannot be refuted" because the presupposition that a trait is an adaptation is 
+never questioned (Lewontin 1978/1985, p. 76).
+	One could directly address this problem if one had some method for 
+distinguishing which traits are the result of natural selection and thus require 
+adaptive explanation. On this issue, Gould and Lewontin raise a deeper and 
+more threatening worry: that the presupposition that a trait is an adaptation is 
+not just treated as untestable but actually is untestable. This complaint is that in 
+general there is no way to settle whether or not a trait is an adaptation. To be 
+sure, it might be relatively uncontroversial that some specific traits are 
+adaptations, but those cases are the exception. Part of the problem is that there is 
+a thicket of alternatives to adaptive explanations and each of these alternatives 
+has a thicket of instances. How can we possibly make a principled decision about 
+when it is appropriate to single out the adaptationist branch? Gould and 
+Lewontin summarize the situation thus:
+
+We would not object so strenuously to the adaptationist 
+programme if its invocation, in any particular case, could lead in 
+principle to its refutation for want of evidence. We might still view 
+it as restrictive and object to its status as an argument of first 
+choice. But if it could be dismissed after failing some explicit test, 
+then alternative would get their chance. (1979, pp. 258f).
+
+The fundamental challenge for adaptationism raised by Gould and Lewontin, 
+then, is to find some empirical test for adaptations.
+
+	One might suspect that the problem for adaptationism is just blanket 
+verificationism of the sort espoused logical positivists early last century. This 
+would make the problem uninteresting because verificationism has been 
+completely discredited. Virtually no one today would hold the practice of normal 
+empirical science hostage to a priori verificationism. However, the problem for 
+adaptationism cannot be dismissed this easily. It is grounded in concerns that 
+specifically apply to adaptive explanations. Those who reject blanket verification 
+still have to explain how the presupposition of adaptive explanations can be 
+empirically verified. The fundamental challenge is to provide some empirical test 
+for whether traits are adaptations.
+
+
+The canonical response
+
+	"The Spandrals of San Marco and the Panglossian Paradigm" attracted a 
+swarm of responses by both biologists and philosophers. Although the responses 
+differ from one another in various ways, many of them share the same basic 
+form. In fact, this basic form of response is wide-spread enough that it could 
+fairly be called "canonical." The basic form of the canonical response is to 
+concede that there is no general empirical test for adaptations but it explain that 
+away as normal empirical science. Here I will illustrate this response with 
+Richard Dawkins and Daniel Dennett, and at the conclusion I will do the same 
+with Elliott Sober. 
+	Dawkins defends more than one thesis about adaptationism (recall the 
+distinctions above), so we must first sort out these tangents. Dawkins notes that 
+assuming that a trait is an adaptation—indeed, an optimal adaptation given the 
+assumption that a certain set of constraints exist—can be a useful heuristic 
+procedure, a productive working hypothesis for generating testable predictions 
+(Dawkins 1982). If these predictions are confirmed, this can both support the 
+original assumption and provide evidence about the actual constraints in the 
+evolutionary process. The point to notice here is that methodological 
+adaptationism consciously and deliberately takes no stand on whether the item 
+in question is actually an adaptation. Instead, it explores what could be inferred 
+if we assume that this presupposition were true. So, methodological 
+adaptationism fails to take the Gould and Lewontin bull by the horns. It does not 
+address the fundamental problem.
+	Dawkins also defends limited adaptationism when he emphasizes that 
+complex organs and behavior are quite likely to be adaptations. "The working 
+hypothesis that they must have a Darwinian survival value [i.e., that they are 
+adaptations] is overwhelmingly strong" (1982, p. 43). He similarly supports 
+limited adaptationism when he states that he "shall only be concerned with those 
+aspects of morphology, physiology, and behavior of organisms that are 
+undisputedly adaptive solutions to problems" (1983a, p. 17). Almost everyone 
+will grant that some traits are obviously adaptations, but limiting attention only 
+to undisputed adaptations leaves a lot unexplained. Limited adaptationism side-
+steps the fundamental challenge to adaptationism by restricting its interest only 
+to uncontroversial adaptations. So to the extent that limited adaptationism is 
+Dawkins's concern, he again ignores the fundamental challenge to 
+adaptationism.
+	Dawkins addresses the challenge to adaptationism itself when he 
+considers traits that might conceivably not be adaptations. He defends 
+adaptationism by pointing out that it is possible to test rival adaptive hypotheses 
+by ordinary scientific methods, noting that "hypotheses about adaptation have 
+shown themselves in practice, over and over again, to be easily testable, by 
+ordinary, mundane methods of science" (Dawkins, 1983b, pp. 360f). 
+	To appreciate Dawkins's defense, recall the distinction between specific 
+and adaptive hypotheses. A specific adaptive hypothesis is a claim to the effect 
+that a trait is an adaptation for the specific adaptive function X, where X is fully 
+specified. Example: large primate testes are an adaptation for producing more 
+sperm. A general adaptive hypothesis claims that a trait is an adaptation, but it 
+does not specify its adaptive function; this is just the presupposition that the trait 
+has an adaptive explanation. Example: large primate testes are an adaptation.
+	Now, note that Dawkins's response concerns specific adaptive 
+hypotheses. He wants to explain the specific adaptive functions of traits. 
+Dawkins's central point is that specific adaptive hypotheses have observable 
+consequences, so they entail empirical predictions and thus could be tested. 
+Dawkins illustrates this point with primate testes size. As it happens, primate 
+testes size scales roughly but not exactly with body size. If testes weight is 
+plotted against body weight, there is considerable scatter around the average 
+line.
+
+A specific adaptive hypothesis is that in those species in which 
+females mate with more than one male, the males need bigger 
+testes than in those species in which mating is monogamous or 
+polyganous: A male whose sperms may be directly competing with 
+the sperms of another male in the body of a female needs lots of 
+sperms to succeed in the competition, and hence big testes. Sure 
+enough, if the points on the testis-weight/body-weight scattergram 
+are examined, it turns out that those above the average line are 
+nearly all from species in which females mate with  more than one 
+male; those below the line are all from monogamous or polygynous 
+species. The prediction from the adaptive hypothesis could easily 
+have been falsified. In fact it was borne out… (1983b, p. 361)
+
+This is an example of the empirical evidence corroborating the specific adaptive 
+hypothesis. In some other cases the hypotheses fail corroboration. This illustrates 
+one way in which biology tests specific adaptive hypotheses. 
+
+	Note, though, that Dawkins does not address the fundamental problem of 
+adaptationism. That problem is about the testability of general adaptive 
+hypotheses—hypotheses to the effect that some trait is an adaptation. We should 
+ask if Dawkins's point that specific adaptive hypotheses are testable provides 
+any reason to think that general adaptive hypotheses are also testable. Now, the 
+observable consequences of a specific adaptive hypothesis depend on the specific 
+function hypothesized. Different functions may well entail different predictions. 
+For example, the hypothesis that large primate testes are an adaptation for 
+temperature regulation would entail a quite different prediction about where 
+species fall in the testis-weight/body-weight scattergram. By contrast, the 
+general hypothesis that large testes are an adaptation for something or other 
+entails no prediction about where species fall in the scattergram. So, a general 
+adaptive hypothesis inherits no observational consequences from specific 
+hypotheses. For this reason, Dawkins admits that general adaptive hypotheses 
+are untestable. "It is true that the one hypothesis that we shall never test is the 
+hypothesis of no adaptive function at all, but only because that is the one 
+hypothesis in this whole area that really is untestable" (1983b, p. 361). Dawkins 
+here is explicitly conceding the fundamental challenge to adaptationism raised 
+by Gould and Lewontin: there is no general empirical test for adaptations. This is 
+a defining feature of the canonical response to Gould and Lewontin.
+	Dawkins makes some headway against the problem of adaptationism for 
+those traits  with a corroborated specific adaptive  hypothesis. Evidence for a 
+specific function is a fortiori evidence that a function exists. So corroborating a 
+specific adaptive hypothesis also corroborates the general hypothesis that the 
+trait is an adaptation. But when there is no specific corroborated adaptive 
+hypothesis for a trait—and this is the typical situation—Dawkins concedes the 
+fundamental complaint against adaptationism.
+	Daniel Dennett offers a principled reason for embracing the untestability 
+of adaptive presuppositions. He gives many examples of adaptive stories that are 
+"too obviously true to be worth further testing" (1995, p. 246). This is limited 
+adaptationism, and as such it ignores the problem of adaptationism. Dennett also 
+embraces a sweeping position near to panadaptationism, saying that 
+adaptationism "plays a crucial role in the analysis of every biological event at 
+every scale from the creation of the first self-replicating macromolecule on up" 
+(1995, p. 238). But this also is no help with the problem of adaptationism. Dennett 
+emphasizes that reverse engineering explains adaptations. Reverse engineering 
+is typically applied to artifacts. It is the search for the reasons for an artifact's 
+features, the reasons why it was engineered to have those features. Biological 
+adaptations are not artifacts literally designed by some creator, of course, but 
+Dennett points out that they are nevertheless crafted by natural selection, and 
+this is enough for reverse engineering to work.
+
+Darwin's revolution … permits [reverse engineering] to be 
+reformulated. Instead of trying to figure out what God intended, 
+we try to figure out what reason, if any, 'Mother Nature'—the 
+process of evolution by natural selection itself—'discerned' or 
+'discriminated' for doing things one way rather than another. … 
+[E]ven at the molecular level, you just can't do biology without 
+doing reverse engineering. (1995, p. 213).
+
+Note that reverse engineering aims to try to discover the specific functions of 
+parts. This aim presumes that the trait in question is designed by natural 
+selection, i.e., that it is an adaptation. This presumption is not something that 
+reverse engineering can test. When engaged in reverse engineering, if one 
+specific adaptive hypothesis fails, your job is to keep searching for the best 
+alternative specific adaptive hypothesis.
+
+	Reverse engineering and methodological adaptationism have similar 
+benefits. Given the assumption that something is an adaptation or, indeed, 
+optimally designed, we can test different hypotheses about selective forces, 
+heritable factors, etc., by seeing if optimality predictions given those constraints 
+match what we observe. "The bootstrapping evidence that we have in fact 
+located all the important constraints relative to which an optimal design should 
+be calculated is that we make that optimizing calculation, and it turns out to be 
+predictive in the real world" (1983, p. 353). So Dennett views adaptationism as a 
+useful explanatory strategy. He likens it to "intentional stance" instrumentalism 
+(Dennett 1971) with regard to the mind.
+
+Adaptationism and mentalism (intentional systems theory) are not 
+theories in one traditional sense. They are stances or strategies that 
+serve to organize data, explain interrelations, and generate 
+questions to ask Nature.  Were they theories in the 'classical' mold, 
+the objection that they are question begging or irrefutable would be 
+fatal, but to make this objection is to misread their point. (1983, p. 
+353)
+
+Dennett admits that adaptive presuppositions are virtually untestable, but he 
+sees this not as a flaw but as a harmless property of all research strategies. 
+
+	Dennett, like Dawkins, illustrates the canonical response to Gould and 
+Lewontin. He concedes that there is no general empirical test for adaptations, but 
+explains this away as normal science. In fact, Dennett views any general test for 
+adaptationism as misguided pre-Darwinian essentialism. "We commit a 
+fundamental error if we think that if we want to indulge in adaptive thinking we 
+need a license and the only license could be the possession of a strict definition of 
+or criterion for a genuine adaptation" (1995, p. 247). The next section produces an 
+empirical criterion of just this sort.
+	The common, canonical, response to Gould and Lewontin is 
+unsatisfactory. It is too weak because it concedes Gould's and Lewontin's 
+fundamental criticism and agrees that there is no general test for adaptations. I 
+think we should make no such concession. Plenty of traits are not adaptations, 
+and adaptive evolution is not always the right explanation. So we need a test for 
+adaptations to tell when adaptive explanations are in the offing. I part company 
+with the canonical response precisely where it agrees with Gould and Lewontin: 
+on whether there is a general empirical test for adaptations.
+
+
+The evolutionary activity test
+
+	I will argue that it is possible to test adaptive presuppositions empirically. 
+I think this test is the first satisfactory solution to the fundamental problem of 
+adaptationism. My argument will be constructive. I will test adaptive hypotheses 
+in evolving systems. The variety of illustrations should help suggest how the test 
+can be applied to other systems. The issue is whether adaptive presuppositions 
+are testable in principle. As Sober notes (1987, 1993), the issue is what tests are 
+possible, not whether anyone actually carries out the tests. The testability of 
+adaptive presuppositions does not prevent people from treating them as 
+untestable.
+	My method involves collecting and analyzing "evolutionary activity" 
+information from an evolving system. Norman Packard and I developed and 
+applied this method over a number of years with the help of students and 
+colleagues.  
+	From an abstract point of view an evolving system consists of a 
+population of items with inherited features. (The system might contain many 
+different kinds of evolving entities, at different levels of analysis. I use the term 
+'item' for maximum generality. The items come from a wide range of 
+possibilities, ranging from individual alleles to whole genotypes and beyond.) 
+The items all participate in a cycle of birth, life and death. Innovations are 
+introduced into the population through genetic operations like mutation and 
+crossover. Everything else being equal, adaptive innovations tend to be inherited 
+through the generations because of their beneficial effect on survival or 
+reproduction. Maladaptive or neutral innovations tend to either disappear over 
+generations or persist silently.
+	The fundamental idea behind the evolutionary activity test is that we can 
+detect whether an item is an adaptation by observing the extent to which it 
+persists in the face of selection pressures.  Resistance to selection is the 
+characteristic feature of adaptations. Whenever an item is active or expressed, 
+natural selection has an opportunity to provide feedback about its adaptive 
+value, its costs and benefits.  If it persists and spreads through a population 
+when it is repeatedly active, and especially if it is much more active than one 
+would expect if it had no adaptive value, then we have positive evidence that the 
+item is persisting because of its adaptive value.  This is, we have positive 
+evidence that it is an adaptation. Note that this evidence might imply nothing 
+about the item's specific adaptive function.
+	To apply this method, one must collect information about the extent to 
+which items have been subjected to selection pressure and, thus, the extent to 
+which their adaptive value has been tested. Since an item is subjected to selection 
+pressure only when it is active or expressed, rather than passive and 
+unexpressed, I call this data evolutionary "activity" or "expression" information.  
+It is simple to collect and display evolutionary activity data for many kinds of 
+items in many kinds of systems. For example, we can measure the activity of 
+individual genes, clusters of genes, phenotypic traits or capacities of individual 
+organisms, or the full sets of features that define genotypes or phenotypes. 
+Technical papers with plenty of details are cited in the footnotes. Here I will 
+provide a brief general summary and some illustrations of the methods involved. 
+	The evolutionary activity method aims to identify innovations that make a 
+positive difference in the life of the items that posses them. In general, an 
+innovation makes a positive difference if it persists and continues to be active. 
+So, with some simple bookkeeping, we can keep an historical record of the 
+current activity of each item at each time. An item's cumulative activity comes 
+from incrementing its current activity over its current lifetime. If the item is 
+inherited during reproduction, its cumulative activity continues to be 
+incremented by the child's current activity. In this way we build a count of each 
+item's cumulative activity over its entire history in the population. 
+
+	Many (e.g., G. C. Williams 1966, and R. M Burien 1992) have emphasized 
+that adaptation is a historical concept; something is an adaptation not in virtue of 
+what function it performs but in virtue of its causal etiology. This historical 
+dimension is part of what has made adaptations especially difficult to identify. 
+So it is worth emphasizing that evolutionary activity information is historical 
+information. The cumulative activity of an item at a given time is not determined 
+solely by its intrinsic state at that moment. It is also affected by all its activity 
+over its previous history in the evolving system. In particular, an item's 
+cumulative activity is the sum (or integral) of the extent to which it has been 
+tested by selection over its previous history in the evolving system. Every time 
+an item is exposed to natural selection, natural selection provides feedback about 
+the item's adaptive value. So, an item will not continue to be tested by natural 
+selection unless it has passed previous tests. So, the amount that an item has 
+been tested by selection reflects how well tested it is, how successful it has been 
+at passing the tests. In general, items that are sufficiently well tested by selection 
+must be persisting because of selection for their adaptive value, so they must be 
+adaptations.
+	How "well tested" must something be to become an adaptation? Natural 
+selection is not instantaneous. Merely having been subject to natural selection is 
+no proof of being an adaptation. Maladaptive items must stand in the face of 
+selection for some time before natural selection can drive them from the system. 
+Only items that have been exposed to some natural selection can be evaluated for 
+adaptive value. The process of natural selection sometimes involves repeated 
+trials. So the mere fact that an item has been exposed to some selection is no 
+guarantee that it is an adaptation. When using evolutionary activity information 
+to gauge an item's resistance to natural selection, there is usually some noise in 
+the data caused by nonadaptive items. We need some way to filter out this 
+nonadaptive activity noise.
+	To solve the noise problem we must figure out how much evolutionary 
+activity nonadaptive items could have. So we must ask how activity will accrue 
+to an item that persists only due to nonadaptive factors like random drift or 
+architectural necessity. A general way to measure the expected evolutionary 
+activity of nonadaptive items is to construct a neutral model of the target 
+system—that is, a system that is similar to the target in all relevant respects 
+except that none of the items in it has any adaptive significance.  (Concrete 
+examples are described below.) The activity that items accumulate in the neutral 
+model provides a null hypothesis for the target system. The neutral model 
+activity accumulations show us how much activity to expect if items in a system 
+like the target have no adaptive significance. The no-adaptation neutral model is 
+a filter that we can apply to screen off nonadaptive noise. If we observe 
+significantly more evolutionary activity in the target system than in its neutral 
+shadow, we know that this "excess" activity cannot be attributed to nonadaptive 
+factors. It must be the result of natural selection, so the items must be adaptations 
+for something.  
+	The essential motivation for this method is not new.  William Wimsatt 
+pointed out that using neutral (random selection) models in biology as null 
+hypotheses is "common and important" (1987, p. 28). David Raup makes 
+especially effective use of neutral models in paleontology. For example, Raup 
+wondered whether the extinction of the trilobites could be explained simply as 
+bad luck, analogous to a gambler's ruin in a fair game, so he constructed a 
+neutral model in which trilobite cladogenesis is "a purely random process with 
+average rates of speciation and extinction no different from the averages for 
+other organisms" (1987, p. 123). He found that probability of the trilobites going 
+extinct due to bad luck was vanishingly small. This illustrates the essential 
+features of my test for adaptations. But from the other direction, if something 
+persists much longer than we would expect due just to chance, this implies it is 
+persisting due to positive selection.
+	Kimura's neutral theory of molecular biology (Kimura 1983; also see 
+below) is also often used as a null hypothesis, against which the action of natural 
+selection is gauged. Kimura's neutral theory predicts that molecular changes 
+with little or no adaptive significance will occur much more rapidly. This 
+reasoning, but run in the other direction, is the rationale behind my test: We can 
+find significant adaptations by detecting those changes that persist longer than 
+chance could explain. 
+	At the molecular level my test for adaptations has implications for the 
+relative rates at which introns and exons change. Chromosomes consist of two 
+kinds of genetic segments: those that are unexpressed, called introns, and those 
+that are expressed, called exons. Introns change more quickly than exons, 
+presumably because the introns have little or no function and so are 
+unconstrained by their function. The so-called "molecular clock"—the 
+background rate of change of genetic molecules—ticks at the rate of change for 
+introns. Exons can be discriminated in part by the fact that they change more 
+slowly than the molecular clock. My neutral models are analogous to the 
+molecular clock. They provide what you might call a "gene" or "genotype" clock. 
+In each case, comparison with these neutral "clocks" are used to discern when 
+natural selection is retaining some evolutionary novelty longer than would be 
+expected just from the operation of the clock.
+	So far I have been describing the method in very general terms and 
+concentrating on its motivation and rationale. To apply this method in a practical 
+context one must make two issues concrete. First, one must settle which kind of 
+item to observe. Activity bookkeeping relies on being able to tell when items are 
+added or subtracted from the system. In my examples below the items are whole 
+genotypes or individual alleles. A genotype's addition into or subtraction out of 
+an evolving system corresponds to its origination or extinction in the system.  A 
+new allele is added to an evolving system through some process like mutation, 
+and it is subtracted from the system when the last individual in the allele's 
+lineage dies. 
+	Second, one must find some way to operationalize the notion of being 
+tested by selection. There is more than one way to do this. In the case of 
+genotypes competing for survival, one measure of a genotype's resistance to 
+selection is its concentration in the population. The greater the genotype's 
+concentration, the more feedback that selection can provide about how well 
+adapted it is. A genotype's evolutionary activity at a given moment, then, would 
+be the sum (or integral) of its concentration during its history in the system up to 
+that moment. This quantity reflects the full historical extent to which the 
+genotype has been tested by selection. In the case of alleles competing for 
+representation in the genome, natural selection tests an allele when the allele is 
+expressed or used. Natural selection can provide feedback about an allele's 
+adaptive value only when the allele is actually used. So, the sum (or integral) of 
+its historical expression or use up to that point measures its historical resistance 
+to selection.
+	Evolutionary activity data can be analyzed in different ways to reveal 
+different things about the process of adaptive evolution. I will illustrate how 
+evolutionary activity data highlights various kinds of phenomena, including 
+competitive exclusion, neutral variation, and random genetic drift. My first 
+example concerns evolutionary activity of genotypes in a simple artificial 
+evolutionary system called Evita. 
+
+
+Visualizing evolutionary activity of genotypes 
+
+	The Evita system is analogous to a population of self-replicating strands of 
+RNA. It consists of a population of self-replicating strings competing for space.  
+These strings are computer programs written in a customized assembly language 
+and residing in computer memory. The programs make copies of themselves 
+while being subject to mutations, and they run the risk of "dying" when space 
+gets too crowded. 
+	Evita is inspired by the famous artificial life system Tierra (Ray 1992), but 
+it is much simpler because it disallows the kind of interactions that lead to 
+parasitism and the other interesting evolutionary phenomena observed in Tierra. 
+Evita's simplicity makes it an especially simple and clear illustration of how 
+graphing evolutionary activity reveals a system's evolutionary dynamics.
+	The system is initialized with a single human-written program placed 
+randomly on a virtual rectangular grid in computer memory.  This program is 
+designed in such a way that when it executes it copies each of its instructions into 
+a neighboring spot on the grid, thereby producing a new copy of the program. 
+Then this "offspring" and its parent both start executing, and each makes 
+another copy of itself. This pattern repeats indefinitely. When space in computer 
+memory is running low and a reproducing program cannot find an unoccupied 
+neighboring grid location, one of the oldest neighbors is randomly selected and 
+"killed," and the offspring takes the space just vacated.  No other interaction 
+between programs is permitted. 
+	In each update of the system the program at each occupied grid spot 
+executes a fixed number of instructions.  This processing time is allocated in a 
+way that is unbiased by spatial position; hence, no organism gains an advantage 
+from its location on the grid.  In fact, the only advantage grid position can 
+provide is the relative fitness of the surrounding population: your fitness 
+depends on your reproduction rate relative to your neighbors. So competition in 
+this system is spatially localized.
+	Innovations enter the system through mutations, which are point 
+mutations. They can fall on any existing program at any time, as if caused by 
+cosmic-rays. When a mutation strikes an instruction in a program, the instruction 
+is replaced by another instruction chosen at random with equal probability from 
+the entire instruction set.  If the mutation rate is too low, there is no significant 
+genetic change in the population. If the mutation rate is too high, the population 
+dies out almost immediately because no successfully reproducing creature can 
+survive the bombardment of mutations long enough to reproduce. With a 
+moderate mutation rate, though, new kinds of programs are continually 
+spawned. Many of these are maladaptive, reproducing slowly if at all. But some 
+reproduce more quickly than their neighbors, and these tend to spread through 
+the population, causing the population of programs to evolve over time.
+	There is a clear distinction between genotype and phenotype in Evita. A 
+given genotype is simply a string of assembly language code. If two programs 
+differ in even one instruction they have different genotypes.  But two programs 
+might have exactly the same behavior—the same phenotype—even though they 
+have different genotypes.  The reason for this is that the only behavior of these 
+programs, the only thing they "do", is reproduce, and the only relevant 
+difference between the behaviors is the speed with which they reproduce.  Thus, 
+any two genotypes that reproduce at the same rate have the same phenotype, no 
+matter how different their genotypes. 
+	The distinction between genotype and phenotype becomes important 
+whenever programs contain unused or unimportant instructions. If a program 
+includes instructions that never execute, these instructions can mutate freely 
+without affecting the operation of the program; multiple genotypes—without 
+phenotype distinction and so with exactly the same fitness—may then evolve 
+through random genetic drift.
+	Evita is explicitly designed so that the programs interact only by 
+competing for space. On average, programs that reproduce faster will supplant 
+their more slowly reproducing neighbors. A program's rate of reproduction 
+depends only on its genotype. Here, we measure reproduction rate of a genotype 
+as the reciprocal of the number of instructions that must be executed for an 
+instance of that genotype to reproduce, on average. So, a genotype that uses half 
+as many instructions to reproduce as a second genotype will have twice the 
+reproduction rate of the second. A genotype's reproduction rate is the sole 
+determinant of the expected rate at which programs with that genotype will 
+produce offspring. Most significant adaptive events in Evita are changes in 
+reproduction rate, so for present purposes we simply equate a genotype's fitness 
+with its reproduction rate. 
+	Two types of genetic changes can affect a genotype's reproduction rate: 
+change in the length of the program and change in algorithm used by the 
+program. Since a change in length increases or decreases the number of 
+instructions that must be copied, it usually changes the reproduction rate.  Since 
+adaptation is driven mainly by reproduction rate, shorter programs have a 
+higher fitness, everything else being equal. In fact, a program typically gains a 
+four-time-step decrease in reproduction time for each instruction that it drops.  
+But things are sometimes different. To see why, consider a typical copy loop 
+(code on the left, comments on the right): 
+
+nop0    # a marker 
+dec     # decrement the (BX) register 	
+copy    # copy an instruction 	
+ifnz    # if register (BX) not zero, 	
+jmp-b   # jump back to the complement of the next marker 
+nop2    # a marker, the complement of the marker nop0
+
+An archetypal copy-loop algorithm change is unrolling the loop.  Well known to 
+assembly language programmers, it involves reducing the time spent in a loop 
+by reducing the loop overhead.  That is, by doing more within the actual loop 
+code, one can reduce the number of times the loop is iterated, thus reducing the 
+number of instructions that do not actually copy data but merely control the flow 
+around the loop. Here is an example of how the previous copy loop can be made 
+more efficient by unrolling the loop:
+
+nop0	
+dec 	
+copy 	
+dec     # this second copy command 	
+copy    # is contained in the loop 	
+ifnz 	
+jmp-b 	
+nop2 
+
+Unrolling the loop can lead to a significant increase in the speed of execution.  
+Comparing the two examples, above, in the first loop one copy is performed 
+every four instructions, while in the second loop two copies are performed in the 
+space of six instructions, resulting in a 50% increase in speed even though the 
+second algorithm uses 30% more code.
+	In order to discern how much of Evita's genotype activity can be 
+attributed to the genotypes' adaptive significance, we must create a "neutral 
+shadow" of Evita (recall the discussion of neutral models above). The crucial 
+property of Evita's neutral shadow is that its evolutionary dynamics are like 
+Evita's except that a genotype's presence or concentration or longevity in the 
+shadow population cannot be due to its adaptive significance—for it has no 
+adaptive significance.
+	Evita's neutral shadow consists of a population of nominal "programs" 
+with nominal "genotypes" which exist at grid locations, reproduce and die. 
+These are not real programs and genotypes; they contain no actual instructions. 
+Their only properties are their location on the grid, their time of birth, the 
+sequence of reproduction events (if any) they go through, and their time of 
+death. Each Evita run has its own corresponding neutral shadow (actually, an 
+indefinite number of them, a qualification I will usually ignore). Events in an 
+Evita run sometimes cause corresponding events in its neutral shadow, but 
+events in a neutral shadow never affect the Evita run (hence, the 'shadow' 
+terminology). 
+	The frequency of mutation events in the neutral shadow is patterned 
+exactly after the Evita run. Whenever a mutation strikes a shadow "program" it 
+is assigned a new "genotype." The timing and number of birth and death events 
+in the neutral shadow is also patterned exactly after the Evita run. The key 
+difference is that, while natural selection can affect which programs reproduce in 
+Evita, all selection in the neutral model is random. It works as follows: Whenever 
+there is a birth in Evita, there is a birth in the neutral shadow. The oldest 
+neighboring shadow "program" dies and the new child occupies the newly 
+emptied grid location, just like in Evita. But while natural selection typically 
+affect which Evita program reproduces (those that are more fit), random 
+selection determines which neutral shadow "program" reproduces. In the 
+neutral shadow, every "program" in the population always has an equal 
+probability of being the lucky one to reproduce. Shadow children inherit their 
+parent's "genotype" unless there is a mutation, in which case the shadow child is 
+assigned a new "genotype."
+	The evolutionary dynamics in the neutral shadow consists of a random 
+walk in genotype space. Genotypes arise and go extinct, and their concentrations 
+change over time, but the genotype dynamics are at best weakly linked to 
+adaptation through the reproduction rate copied from Evita. Since the neutral 
+shadow genotypes have no adaptive significance whatsoever, none of their 
+features like longevity and concentration—and evolutionary activity—can be 
+attributed to their adaptive significance. At the same time, by precisely 
+shadowing the births, deaths, and mutations in Evita, the neutral shadow lets us 
+see the expected evolutionary activity a genotype in a system exactly like Evita 
+except for being devoid of natural selection. The neutral shadow defines a null 
+hypothesis that specifies the evolutionary activity that we could expect to see 
+due just to non-adaptive factors such as chance (e.g., random genetic drift) or 
+necessity (e.g., the system's underlying architecture). By screening off Evita's 
+nonadaptive  evolutionary dynamics we can determine which aspects of Evita's 
+behavior are due to adaptations. This difference will show up vividly when we 
+graph the evolutionary activity in Evita and in its neutral shadow.
+
+Figure fig-2waves about here
+
+A graph of Evita's evolutionary activity shows how evolutionary activity of the 
+genotypes (on the y-axis) varies as a function of time (on the x-axis).  The most 
+evident feature of such graphs is the presence of myriad lines or waves (as I will 
+call them), clearly evident in the figures below.  Each wave corresponds to a 
+single genotype and shows how that genotype's evolutionary activity varies over 
+time. The slope of a given genotype's activity wave at a given time is the same as 
+the genotype's concentration in the population at that time. This explains why 
+the waves invariably arise from the x-axis and thence move up and to the right, 
+as illustrated by the two isolated waves in Figure fig-2waves. When a new 
+genotype enters the population, a new wave will arise from the x-axis. As the 
+genotype's concentration in the population grows (or shrinks) over time, the 
+slope of the wave increases (or decreases). When the genotype finally goes 
+extinct, the slope of its wave falls to zero and the wave ends. In this way, a 
+genotype's activity wave reflects its changing concentration throughout its 
+history in the population.  
+	Examining some Evita evolutionary activity graphs will make it clear how 
+the graphs depict a evolutionary phenomena. In the Evita activity graphs shown 
+here, the Evita system parameters were all identical except for mutation rate and 
+elapsed time.  Each genotype in a given run is given a unique name of the form 
+Nxxx, where N is a number indicating the genotype's length and xxx is a three-
+character string (in effect, a base 52 number) indicating the genotype's order of 
+origination among genotypes of that length. For example, 32aac is the third 
+length 32 genotype to arise in the course of a given run.  
+	These evolutionary activity graphs depict the history of the genotypes in a 
+given Evita run.  The ancestral genotype always corresponds to the wave that 
+arises out of the origin (see any of the figures).  When the ancestral genotype is 
+driven to extinction by another genotype, the ancestral wave ends as one or more 
+new significant waves arise.  Whenever one genotype drives another to 
+extinction, a new wave arises as an earlier one dies out. Multiple waves coexist in 
+the graph when multiple genotypes coexist in the population, and genotypic 
+interactions that affect genotype concentrations are visible as changes in the 
+slopes of waves. In general, the dominating genotype(s) during a given epoch of 
+evolution appear as dominating wave(s) during that period of the activity 
+diagram. 
+
+Figure fig-neutral about here
+
+The most important point to stress first is how the significant waves in these 
+diagrams correspond to significant adaptations among the genotypes. We can 
+see this most clearly by comparing an Evita evolutionary activity graph with an 
+activity graph of its neutral shadow. Figure fig-neutral shows an evolutionary 
+activity graph from both Evita (top) and its neutral shadow (bottom). The 
+activity scale (y-axis) in these two plots is roughly comparable, except that 
+activity on the bottom is expanded by a factor of three to make the neutral model 
+activity easier to see. These graphs are strikingly different. Leaving aside the 
+ancestral wave, the highest waves in the Evita are orders of magnitude higher 
+than those in the neutral analogue.  This is clear evidence of how the size of a 
+genotype's evolutionary activity waves in Evita reflects the genotype's adaptive 
+significance. In the normal model, at each time one or a few genotypes enjoy a 
+special adaptive advantage over their peers, and this is reflected by their 
+correspondingly huge waves. The change in dominant waves reflects a new 
+adaptation out competing the prior dominant adaptations. In the neutral 
+analogue, by contrast, a genotype's concentration reflects only dumb luck, so no 
+genotype activity waves rise significantly above their peers. 
+
+Figure fig-mu=1 about here
+
+The evolutionary activity graph in Figure fig-mu=1 is dominated by five waves 
+corresponding to the five most populous genotypes over the course of the run. 
+Miscellaneous low-activity genotypes that never claim a substantial following in 
+the population are barely visible along the bottom of the activity plot. 
+Comparing the origin of the waves with the average population fitness shows 
+that each of the significant new waves corresponds to a genotype that has a 
+significant fitness advantage over its predecessors. Closer examination of those 
+genotypes discloses those adaptive advantages. The first significant new wave is 
+caused by genotype 33aad, which reproduces much faster than the ancestral 
+genotype 37aaa due to its shorter length. The next significant evolutionary 
+activity wave, the largest one in the graph, is caused by genotype 33aak; this 
+genotype is the same length as 33aad but it can reproduce faster because it has a 
+shorter copy loop. Notice the kink in 33aak's wave at about time step 2000. 
+Magnifying the low-activity waves at that time shows that this kink is 
+simultaneous with the start of another wave—the fourth main wave in this plot, 
+due to genotype 31aab which is still shorter in length. The post-kink slope in 
+33aak's wave is slightly less than that of 31aab's wave, and in fact genotype 
+31aab's shorter length gives it only a slight fitness advantage (about 1%) over 
+genotype 33aak. Finally, the fifth significant wave is caused by a genotype, 
+30aab, which reproduces faster than genotype 31aab due to its slightly shorter 
+length. This activity graph clearly highlights those genotypes with a significant 
+adaptive advantage over their peers. In addition to births and deaths of 
+significant genotypes, we clearly see the dynamics of competitive exclusion 
+between the major genotypes in the evolving system.
+
+Figure fig-mu=2 about here
+
+Figure fig-mu=2 is an evolutionary activity graph from an Evita run with a 
+slightly higher mutation rate. The main activity waves in this graph correspond 
+to the main fitness jumps, as in the previous graph. Closer analysis reveals that 
+the major adaptive events consist of shortening a genotype's length or copy loop. 
+But there are two interesting exceptions to this pattern, leaving a characteristic 
+signature in the activity waves.
+
+Figure fig-mu=2.blowup about here
+
+First, notice that the second fitness jump corresponds to a cluster of seven similar 
+genotypes (33aap, 33aaq, 33aar, 33aas, 33aat, 33aau, 33aav) which all arise at 
+about the same time and which together contribute to a dense cloud of activity 
+waves. Figure fig-mu=2.blowup is a blowup of this cloud of waves. These 
+genotypes differ from each other only by mutations at an unexpressed locus, so 
+they all use exactly the same algorithm and are neutral variants of one another—
+different genotypes with exactly the same phenotype. The unexpressed locus 
+was created by a mutation which produced a non-template instruction inside the 
+template surrounding the copy loop, saving one executed instruction per loop 
+traversal and thus significantly increasing fecundity. Once this mutation has 
+occurred, almost any other mutation at the same locus creates another non-
+template instruction with an identical fitness benefit, so a cloud of neutral 
+variants quickly grows. Since these neutral variants have exactly the same fitness 
+advantage over their predecessors, and since they all are just one mutation away 
+from each other, they engage in adaptive interactions with competing genotypes 
+effectively as a single higher-level phenotype. If the evolutionary activity data 
+from these neutral variant genotypes were pooled and graphed as a single 
+phenotype, they would constitute a single salient wave on a par with the other 
+salient waves. 
+	Second, notice that the fourth salient wave (due to genotype 32abl) does 
+not correspond to a significant fitness jump.  The fact that the waves from 32aaV 
+and 32abl coexist for a long time (about 1000 time steps), rather than one quickly 
+driving the other to extinction by competitive exclusion, indicates that they are 
+nearly neutral variants.  In fact, the fitness of the second wave (32abl) exceeds 
+that of the first wave (32aaV) by about only 0.5%, for 32abl has a mutation which 
+causes a single instruction to be skipped, for a net savings of one instruction per 
+reproduction event. The interactions among the three salient waves between time 
+steps 4000 and 5000 have a similar explanation.  They are a significant 
+improvement (5% fitness advantage) over the genotypes that they drive extinct, 
+but they differ from one another by much less (under 2% fitness difference).
+
+Figure fig-mu=2long about here
+
+If this run is extended significantly further (Figure fig-mu=2long), we continue to 
+see competitive exclusion between genotypes when the origination of one 
+genotype wave causes the end of another, and we also continue to see neutral 
+variants when significant genotype waves persist simultaneously for a significant 
+duration.
+
+Figure fig-mu=10 about here
+
+When we increase the mutation rate an order of magnitude, we see a new 
+phenomenon.  Classic competitive exclusion dominates during the first 2000 time 
+steps, but evolution then reaches an equilibrium and the bulk of the subsequent 
+evolutionary change consists of random drift among selectively-neutral 
+genotypes—the sort of neutral evolution emphasized by Motoo Kimura (1983).  
+The difference between these kinds of evolutionary phenomena is clearly 
+indicated in the different quality of the activity waves. A genotype winning at 
+competitive exclusion typically causes a relatively smooth and sigmoidal-shaped 
+wave (although the bottom of the wave will be truncated if it's concentration 
+rises extremely fast). By contrast, random drift causes waves that are much more 
+wiggly because the wave's slope randomly rises and falls as the genotype's 
+concentration wanders up and down. This difference can be clearly seen in 
+Figure fig-2waves. The sigmoidal wave in Figure fig-2waves is 32abl from Figure 
+fig-mu=2, which arose through competitive exclusion. The wiggly wave in 
+Figure fig-2waves is taken from the random genetic drift in the middle of Figure 
+fig-mu=10.
+
+Figure fig-mu=40 about here
+
+A final Evita activity graph (Figure fig-mu=40) shows how Evita's long-term 
+adaptive dynamics are hard to predict. Competitive exclusion dominates the first 
+3000 time steps of the run; some is evident in sigmoidal wave, but some is 
+hidden in low-lying clouds of neutral variants. Next, the rather wiggly waves 
+signal that over half of the run consists of random genetic drift among more or 
+less neutral variants with minute differences in fitness. It is interesting to note 
+that genotype 24aNR takes two more instructions to reproduce and so is slightly 
+less fit, than the genotype (24avp) which it supplants.  This illustrates how 
+marginal fitness improvements do not always win the day during random drift. 
+At about two-thirds the way through the run we see the emergence of a new 
+genotype (24bxI) which totally dominates the rest of the run. Genotype 24bxI has 
+a huge fitness advantage (about 20%) over its competitors because it has 
+acquired the ability to "unroll the loop'" (recall the discussion above).  The run 
+ends in a period of evolutionary equilibrium, with a variety of new genotypes 
+coexisting with the original loop-unroller. The wiggly waves suggests that this is 
+random genetic drift of neutral variants of the loop-unrolling genotype.
+	With very little interaction among "organisms" and a relatively fixed and 
+predictable fitness function (replication rate is the one key to success), Evita 
+makes it especially simple to see the crux of my test for adaptations among 
+genotypes. My overall argument is that the evolutionary activity method 
+provides a feasible empirical test for adaptations. Further examples will show 
+how this test can be applied to other situations. For example, in Evita we focused 
+on whole genotypes. In a moment we will consider an example that concentrates 
+on individual genes.
+	The main lesson to learn from this example in Evita is simple: Significant 
+evolutionary activity waves are adaptations—genotypes that are persisting and 
+spreading through the population because of their relative adaptive value. 
+Natural selection is promoting them because of their relative reproduction rate; 
+they flourish because of selection for this. 
+	The evidence for the main lesson is direct and compelling. It has three 
+parts. First, new significant waves coincide with significant jumps in average 
+population fitness. This shows that the new genotype spreading through the 
+population and making the new wave is an adaptive advantage over its 
+predecessors. Second, microanalysis of the genotypes in the new waves reveals 
+the specific adaptation that each involves. We can easily understand how the 
+genetic novelties in the genotypes had an adaptive advantage over their 
+competition. Third, in a neutral model in which chance and architectural 
+necessity are allowed full reign and natural selection is debarred by fiat, no 
+genotype stands out enough to make a significant wave. So, the major 
+evolutionary activity waves in Evita could be produced only by continual natural 
+selection of those genotypes, and natural selection of the genotypes must be due 
+to selection for their adaptive value.
+	Clouds of neutral variants are an exception to this main lesson, but they 
+are an exception that proves the rule. The different waves that make up the cloud 
+in Figure fig-mu=2 (detail in Figure fig-mu=2.blowup) are not different 
+adaptations but the same adaptation. Their genotypes differ, but they express the 
+same adaptive phenotype. This shows that new significant waves might not be 
+new phenotypic adaptations. New significant waves are still adaptations, for 
+they are persisting because of their adaptive value, but they are all different 
+genotypic instances of the same phenotypic adaptation. If a cloud contains 
+enough neutral variants, each individual wave might be small enough that it 
+would not be significantly different from the waves produced in a neutral model. 
+The neutral variants in Figure fig-mu=2.blowup stand out from neutral activity 
+waves, but not by a lot. (The neutral model produces waves like the "little hairs" 
+along the bottom of the Figure.) 
+	It is possible for a new adaptation to be lost in a big enough cloud of 
+neutral variants. This shows that this test for adaptations can have false 
+negatives; adaptations might not all be detected. False negatives can happen 
+when we apply the test to items at a suboptimal level of analysis. In Evita, 
+adaptations are not really genotypic but phenotypic, so the phenotype is a better 
+level of analysis for seeing the dynamics of adaptive evolution in Evita. 
+However, for practical reasons we have looked at activity in Evita at the level of 
+the genotype (because it is simple to get the data). If we computed and graphed 
+the evolutionary activity of phenotypes, then the new adaptations would stand 
+out much more. Graphing activity of the appropriate items reveals the cleanest 
+picture of how evolution produces adaptations. In fact, comparing activity for 
+different items is a way to discover which items are undergoing adaptive 
+evolution. However, when it is impractical or inconvenient to collect activity 
+information for the right items, related items usually provide a clear enough 
+picture of most adaptations. For example, in Evita adaptation concerns 
+phenotypes primarily and genotypes only secondarily (because of neutral 
+variants), but the genotype activity in the figures above is a pretty clear picture of 
+how phenotypes adapt.
+	Note that this method reveals which genotypes are adaptive without in 
+general showing what makes them adaptive. For example, inspection of Figure 
+fig-mu=1 shows that the first major new wave produced by genotype 33aad is an 
+adaptation but it does not show what it is about 33aad that makes it better than 
+its peers. We can usually discover a genotype's adaptive advantage by 
+independent microanalysis; for example, we discovered that 33aad was shorter 
+and so reproduced faster. But we use the wave diagrams to discern first which 
+genotypes are the adaptations and so are worthy of investigation. It goes without 
+saying that this test has no panadaptive implications or presuppositions. There 
+are many maladaptive genotypes in Evita; their activity creates the "little hairs" 
+along the bottom of the wave diagrams. Furthermore, if Evita's mutation rate is 
+too high or too low, then natural selection fails to work (see chapter XX). In either 
+case, there are plenty of evolutionary activity waves but they are not significantly 
+different from neutral activity waves, so none are adaptations. The evolutionary 
+activity test lets the adaptive chips fall where they may.
+
+
+Visualizing evolutionary activity of genes 
+
+	So far we have been looking at evolutionary activity of Evita genotypes. 
+But it many cases it is more natural to consider individual genes as adaptations. 
+We will see that, just as with genotypes, so with genes: Significant evolutionary 
+activity waves are the sign of adaptations. 
+	I will illustrate gene-level adaptations in a second artificial evolving 
+system: Packard's Bugs model. This system is excellent for observing the 
+adaptive significance of individual genes. The genes encode sensory-motor rules, 
+so they are easy to interpret and nicely illustrate my test. Also, it is impossible for 
+maladaptive agents to survive for even briefly in this model, so there is no 
+significant nonadaptive noise to filter—another useful simplification.
+	The Bugs model was devised by Norman Packard as a system in which 
+macro-level evolutionary dynamics emerge implicitly from an explicit micro-
+level agent interactions.  The model consists of a population of agents with 
+evolving sensory-motor functionality. The agents' survival hinges on their 
+sensory-motor genes, for these genes control how local sensory information cues 
+behavior. Finding resources requires contextually appropriate behavior patterns. 
+Thus, information processing and resource processing are the two internal 
+processes that dominate the agents' lives. An agent's continued existence 
+depends enhancing its sensory-motor functionality by coordinating those two 
+processes.  Since the requirements of sensory-motor functionality may well alter 
+as the context of evolution changes, continued viability and vitality requires that 
+sensory-motor functionality can adapt in an open-ended, autonomous fashion.  
+Packard's model attempts to capture an especially simple form of this open-
+ended, autonomous evolutionary adaptation.
+
+	The model consists of a finite two-dimensional world with resources and a 
+population of agents. The agents exist in a spatial grid, sensing the resources in 
+their local environment, moving as a function of what they sense, ingesting the 
+resources they find, and reproducing or dying as a function of their internal 
+resource supply. The model's spatial grid has wrap-around boundaries, so the 
+world is a toroidal lattice. If you keep going "west" in a straight line, you will 
+eventually end up back where you started. Besides the agents, all that exists in 
+the world are 60 tiny square blocks of resources. Each block is 3 sites on a side, so 
+it consists of 9 square sites of food. The resource blocks are randomly scattered 
+over the world, separated from one another by a resource-less "desert." As the 
+agents ingest the resources they are immediately replenished from an external 
+source, so the distribution of tiny blocks is static in space and time. Nevertheless, 
+the agents constantly extract and expend resources by living and reproducing, so 
+the agents are resource "sinks."
+	Adaptation is resource driven since the agents need a steady supply of 
+resources to survive and reproduce.  Agents interact with the resource field at 
+each time step by ingesting the resources (if any) found at their current location 
+and storing it in their internal resource reservoir. To survive agents must 
+continually refill this reservoir, for existing and moving expend resources. This 
+continual resource consumption represents the internal metabolic processes that 
+keep the agents alive. If an agent's internal resource supply drops to zero, it dies 
+and disappears from the world.
+	Each agent moves each time step. Its ability to find resources depends on 
+its sensory-motor functionality—that is, the way in which its perception of its 
+local environment affects its behavior. This sensory-motor functionality is 
+genetically encoded in a table of rules of the form:
+
+ IF environmental condition E is sensed THEN do behavior B. 
+
+The table of rules constitutes a sensory-motor map. An important feature of the 
+environment is that each world site can contain only one agent at a time. So, if 
+one agent tries to move to a site that another agent already occupies, the former 
+agent makes a random walk to the first free site it finds. 
+	The agents have a limited range of sensory states and behaviors. An agent 
+can sense whether there are resources (but not the other agents) in each of the 
+five sites centered on its present location in the lattice—its so-called von 
+Neumann neighborhood. Since in principle each of these five sites can either 
+contain or be devoid of resources, the agents can discriminate 25=32 different 
+environmental conditions. But since the world is scattered with 3x3 blocks of 
+food, in practice agents detect only 14 different conditions (SEE FIGURE OF 15 
+ENVIRONMENTAL CONDITIONS). In other words, the agents are typically in 
+one of 14 sensory states. An agent's behavioral repertoire is limited to straight 
+jumps between one and fifteen sites in the eight compass directions (north, 
+northeast, east, etc.), for a total of 15x8=120 different possible behaviors. So, the 
+genotype encoding an agent's sensory-motor functionality consists of a 
+genetically hardwired movement for each detectable environmental condition. 
+These genotypes are extremely simple, amounting to nothing more than a table 
+of sensory-motor rules. Nevertheless, the space in which adaptation occurs is 
+vast, consisting of 12014 or about 1032 distinct possible genotypes.
+
+	The sensory-motor functionality in the population of agents can evolve 
+when the agents reproduce.  An agent reproduces (asexually) if its resource 
+reservoir fills up. The parent produces one child, which starts life with half of its 
+parent's resource supply. The child also inherits its parent's sensory-motor map, 
+except that mutations may change the behaviors linked to some of the sensory 
+states. In the extreme case in which the mutation rate is set to the maximal level, 
+a child's entire sensory-motor map would be chosen at random. (In the results 
+shown here the mutation rate produced about one mutation per reproduction 
+event on average.)
+	In a single time step the model has each agent in turn complete the 
+following sequence of events: sense its von Neumann neighborhood, move to the 
+new location dictated by its sensory-motor map (and if it is occupied randomly 
+walk to the first unoccupied site), consume any resources found at its new 
+location, expend the resources needed to survive and move, and finally 
+reproduce (or die) if its resource reservoir is full (or empty). A given simulation 
+starts with randomly distributed agents containing randomly chosen sensory-
+motor strategies. As time progresses, the population's size and genetic 
+constitution changes according to the contingencies with which the agents find 
+resources. Agents with maladaptive strategies tend to find few resources and 
+thus to die, taking their sensory-motor genes with them; but agents with 
+adaptive strategies tend to find sufficient resources to reproduce, spreading their 
+sensory-motor strategies (with some mutations) through the population. Thus, 
+on an evolutionary time scale, the process of natural selection implicitly adapts 
+the population's sensory-motor strategies to the contingencies of its 
+environment.
+	All macro-level evolutionary dynamics produced by this model ultimately 
+are the result of explicit micro-level mechanisms acting on external conditions.  
+The model dynamics explicitly controls only local micro-level states: resources 
+are locally replenished, an agent's genetically encoded sensory-motor strategy 
+determines its local behavior, an agent's behavior in its local environment 
+determines its internal resource level, an agent's internal resource level 
+determines whether it survives and reproduces, and genes randomly mutate 
+during reproduction.  Each agent is autonomous in the sense that its behavior is 
+determined solely by the environmentally sensitive dictates of its own sensory-
+motor strategy.  On an evolutionary time scale these sensory-motor strategies are 
+continually refashioned by the historical contingencies of natural selection.  The 
+model generates macro-level evolutionary dynamics only as the indirect product 
+of an unpredictably shifting agglomeration of directly controlled micro-level 
+events (individual actions, births, deaths, mutations).
+	Agents with different strategies have a hard time surviving on the same 
+3x3 block because the available real estate is so limited. They tend to collide and 
+this bumps one of them off the block into the resource desert. Once in the desert, 
+an agent will move in a straight line (doing whatever behavior is genetically 
+encoded at its desert locus) until it finds and colonizes another resource block or 
+perishes. Thus, the agents on a given 3x3 block typically all follow exactly the 
+same behavioral strategy. They are all in a holding pattern, chasing one another 
+around the tiny block. The patterns are simple cycles that jump through a 
+sequence of sites on the block. (There is a complication: sometimes strategies 
+include steps from sites outside the cycle back into the cycle. These steps "drain" 
+the bugs back into the cycle if they get bumped out of it, so I call them "drains." 
+I'll return to them below.) The simplest cycles (period 2) consist of jumping back 
+and forth between two sites on a block. The next simplest strategy (period 3) 
+cycles through a triple of sites. The most complex strategy would cycle through 
+all nine sites on the block.
+	Everything else being equal, behavioral strategies with higher periods 
+have a selective advantage. Since a 3x3 block contains 9 distinct sites, it can 
+support at most a period 9 strategy. A period N strategy has room for at most N-
+1 agents (one of the agents must move first and its destination must be free). 
+Longer period strategies can support larger populations because they can exploit 
+more of the available energetic resources. All agents on blocks gather resources 
+and reproduce at the same rate, so a block with a larger population will produce 
+offspring at a higher rate. Once a cycle is full of agents, children can no longer fit 
+on the block with their parents, so they are bumped into the resource desert. A 
+block with a full cycle continually produces children which migrate through the 
+desert until they colonize new blocks or perish. Thus, full blocks with larger-
+period strategies will have a higher population, and so they will produce 
+children more quickly and so exert greater migration pressure. This means that 
+longer-period strategies enjoy a selective advantage throughout the scattering of 
+tiny resource islands.
+	Thus, the typical adaptation in the Bugs model is an extension of the 
+period of an existing strategy, which allows the population to exploit more of the 
+available resource sites. Over evolutionary time, then, the cyclic strategies tend to 
+increase in period through natural selection. Observed population level nicely 
+reflects the fitness of the genotypes in the population in resource-driven and 
+space-limited models like Packard's Bugs. In a world with 60 tiny resource 
+blocks, for example, a period N strategy that is distributed across the blocks can 
+support N-1 agents per block, for a total population around 60*(N-1). As higher 
+period strategies evolve, the population level typically shows striking 
+punctuations, increasing by about 60 each time.
+	We can read these adaptive phenomena in gene-level evolutionary 
+activity wave diagrams. In these diagrams, each gene in each bug has an activity 
+counter, but we can increment activity with a procedure that is more sensitive to 
+selection pressure. Each time a bug senses its local environment and moves 
+according to its genetically encoded sensory-motor map, it uses one of its genes.  
+We simply increment a gene's activity counter each time that gene is used, that 
+is, each time the bug uses the sensory-motor rule in which that gene is encoded. 
+Natural selection can provide feedback on a sensory-motor gene only when it is 
+expressed, and our activity counters are simply counting the number of times a 
+gene has been expressed. When a child is inherits genes from its parent, it also 
+inherits the parent's activity values for those genes, unless there is a mutation in 
+which case that gene's activity value is reset to zero. In this way, a gene's activity 
+count records its exposure to selection pressure over its life in the gene pool. A 
+mutation that confers a significant advantage—e.g., one that lengthens a cycle 
+period—will tend to be persistently used through many generations, so it will 
+leave a significant wave in the activity graph.
+
+Figure scatter.9.11 about here
+
+Figure scatter.12.2 about here
+
+In this model with the present evolutionary activity counting scheme, an activity 
+wave's slope reflects the frequency with which the gene is being used. Since the 
+sensory-motor strategies are cycles, the frequency with which a given gene is 
+used is inversely proportional to the length of the cycle, and the slope of the 
+wave is simply the reciprocal of the cycle length. You can see this by comparing 
+the activity waves in Figures scatter.9.11 and scatter.12.2.  Figure scatter.9.11 
+shows the activity wave from a period two cycle, and the wave has a slope of 
+1/2. In this case, only one agent lives during the course of the entire run (the 2-
+cycle involved a quite large jump, back and forth from one block to another, and 
+the magnitude of the jump exacted a severe metabolic cost). The activity wave in 
+Figure scatter.12.2 is a period three cycle, and its slope is 1/3. You can see the 
+population level grow during the course of this run, as the 3-cycle agents 
+colonize more and more of the 3x3 blocks.
+
+Figure scatter.10.2 about here
+
+A period-lengthening adaptation is clearly evident in Figure scatter.10.2. The 
+initial adaptation is a 2-cycle, and the activity of the genes for this strategy make 
+up the first wave (with slope 1/2). This 2-cycle consists of these two genes: (a) If 
+you are in the middle of a block, move up one step. This rule will put you in the 
+middle of the top row of the block. (b) If you are in the middle of the top row of a 
+block, move down one step. This rule will put you back in the middle of the 
+block. (See Figure 10.2.cycles.) You can see the population level rise and then 
+plateau at around 60 as the agents colonize the 60 little 3x3 resource blocks. 
+
+Figure 10.2.cycles about here
+
+An interesting detail in the evolutionary activity diagram occurs at this juncture. 
+A little after all the blocks are colonized, the main wave spreads out a bit and 
+eventually splits into two roughly parallel waves. At the same time, a very low 
+slope wave arises from the bottom of the diagram. These changes are caused by a 
+fortuitous rule that allows some of the agents bumped into the desert next to the 
+block to jump back into the middle of the block. This rule has the form: (b') If you 
+are in the desert next to the top edge of the block, jump down two steps. This will 
+land you in the middle of the block. The front part of the main wave is the 
+activity for the gene (a) described in the text, the back part of the main wave is 
+the activity for gene (b) described in the text, and the low slope wave is the 
+activity for gene (b'). Thus, the low slope wave corresponds to an infrequent 
+period-two strategy in which rule (a) is followed by being bumped into the 
+desert (so rule (b) is not used), followed by use of rule (b'). Note that the use of 
+rule (a) approximately equals the use of both rules (b) and (b').
+
+	The second major event in the evolutionary activity wave diagram occurs 
+about two thirds of the way into the run, when the second major wave 
+originates.  Note that the slope of the second wave is about 1/3 and that the 
+population level makes a big jump up to around 120. All these clues point to 
+what happened: genetic innovations generated a period-three cycle and it 
+subsequently spread across all the resource blocks. This 3-cycle consists of two 
+mutations: First, gene (b) is replaced with gene (c): If you are in the middle of the 
+top row of a block, go one step to the right. This will place you in the block's 
+upper right corner. The second mutation produced gene (d): If you are in the 
+block's upper right corner, go one step on the diagonal down and to the left. This 
+will place you back in the middle of the block. (See Figure 10.2.cycles.) Replacing 
+gene (b) with (c) and (d) expands the (a, b) 2-cycle into the (a, c, d) 3-cycle.
+
+Figure scatter.10.14 about here
+
+Figure 10.14.cyclesequence about here
+
+We can see a series of similar period-lengthening adaptations in Figure 
+scatter.10.14, in which the main features are labelled. Each major new wave has 
+lower slope and it corresponds to a major jump in population level, as the 
+population goes from a 2-cycle to a 3-cycle, then to a 4-cycle, and then to a 5-
+cycle. Figure 10.14.cyclesequence diagrams the genes involved in these 
+adaptations. As the genes in shorter cycles are incorporated into longer cycles, 
+you can see kinks in their activity waves (second and third major waves) as their 
+slope falls from 1/3 to 1/4 to 1/5. This diagram shows a new feature at the first 
+period-lengthening adaptation. In this case, when the 2-cycle is replaced by a 3-
+cycle, the 3-cycle genes do not conflict with one of the 2-cycle genes, so that gene 
+remains in the population as a virtually unexpressed vestigial rule. (It drains into 
+the new 3-cycle.) It traces a horizontal line in the activity diagram since it no 
+longer accrues new usage.
+	Our examination of evolutionary activity waves of individual genes 
+supports the same lesson as with genotypes: Significant waves correspond to 
+significant adaptations—genes that are persisting and spreading over 
+generations because of their adaptive value. They are flourishing in the gene pool 
+through the operation of natural selection. Furthermore, this is selection for the 
+genes, not just selection of the genes, as we can see by the jumps in population 
+level that match big new waves and by microanalysis of how the new genes are 
+period-lengthening adaptations. Although we use microanalysis of the specific 
+adaptations to confirm the lesson that significant waves are significant 
+adaptations, we can exploit this lesson without delving into which adaptation 
+each wave involves. Activity wave diagrams show us when new adaptations 
+arise without revealing or depending on information about what that adaptation 
+is. In general, the existence of a new significant wave reveals that the adaptive 
+presupposition is true—natural selection is operating—without supporting any 
+specific adaptive hypothesis. In some cases we can do more than this. For 
+example, in the Bugs activity wave diagrams the slope of a new wave typically 
+indicates the period of the cyclic strategy in which a given gene participates, so 
+new waves which lower the slopes of existing waves signal a period-lengthening 
+adaptation. But even without knowing this, we know that a new wave is a new 
+adaptation.
+	We can confidently interpret evolutionary activity waves in Packard's 
+Bugs model (as described here) as adaptations even without comparison with a 
+neutral model. This is because agents lacking the genes for a cyclic strategy 
+quickly die and so add negligible activity to the system. Filtering with a neutral 
+model would cut off the "little hairs" along the bottom of the activity wave 
+diagram, but in this case the "little hairs" are so minuscule that we can ignore 
+them. So the Bug gene activity data needs no neutral filtering. 
+	The Bugs illustrated how altering a system's parameters can magnify 
+nonadaptive noise. If we decrease the mutation rate until the system never 
+encounters new beneficial genes, then its activity waves would look like a neutral 
+model. The same holds if we increase the mutation rate so much that the system 
+cannot retain beneficial genes. This underscores how the activity method does 
+not prejudice the question whether natural selection is operating. As I put it 
+above, the method lets the adaptive chips fall where they may and shows where, 
+if anywhere, they are. In some predictable cases (such as when the rate at which 
+genetic variation is being generated is lethally high or absolutely zero), no new 
+adaptations will be produced. So, it is not the case that general adaptive 
+hypotheses are universally true.
+
+
+Generalizing the evolutionary activity test
+
+	Testing for genotype- and gene-level adaptations in Evita and the Bugs 
+illustrates the evolutionary evolutionary activity solution to the problem of 
+adaptationism. The examples triangulate a general method for testing for 
+adaptations. The sign that an evolutionary process is creating adaptations is that 
+its activity data is significantly higher than what you would expect if selection 
+were random. If activity waves rise above the noise generated in an appropriate 
+random selection neutral model, then you know the corresponding items are 
+adaptations (modulo complications about hitchhikers and genetic drift, 
+discussed below) even though you may have little or no knowledge about what 
+those adaptations are. It shows that some adaptive explanation is needed but it 
+silent about the merits of any specific explanation. That is, you have evidence for 
+a general adaptive hypothesis even if you have no evidence for any specific 
+adaptive hypothesis.
+	This evolutionary activity test applies to evolutionary systems across the 
+board, and it applies across levels of selection. We have seen it applied to whole 
+genotypes and to individual genes, and it is easy to generalize it to other possible 
+targets of natural selection. Our discussion of neutral variants in Evita 
+generalized the test to phenotypes. The test also easily generalizes to functionally 
+integrated clusters of genes. Evolutionary activity data for the use of cyclic gene 
+sequences, for example, would make the period-lengthening adaptations in 
+Packard's Bugs model even more evident.
+	To apply the evolutionary activity method we must choose what items to 
+observe and how to increment their activity. These choices affect how the activity 
+waves looks, so we must remember our choices when interpreting evolutionary 
+activity waves. Here is a very simple example. Consider one locus with three 
+alleles—A, B, and C—and assume there is an adaptive evolutionary cycle among 
+these alleles: Allele A is replaced by allele B, which is replaced by allele C, which 
+is replaced by allele A, which is replaced by allele B, etc. Each of these alleles is 
+an improvement on its predecessor, but none is globally optimal because fitness 
+is context sensitive. If we collected activity data for each instance of each kind of 
+allele and incremented it according to its concentration in the population, the 
+activity diagram would show a continual stream of new waves, as in the top of 
+Figure pgs.allele.instances. This might seem to violate the lesson that new waves 
+indicate new adaptations. The subsequent instances of the alleles are not "new" 
+adaptations but just new instances of "old" adaptations. 
+
+Figure pgs.waves about here
+
+This example shows that one must distinguish kinds of alleles from instances of 
+those kinds, and then one must choose which to examine. Those interested in the 
+evolution of new instances of alleles should collect activity data for each instance 
+of each kind of allele (the first instance of A, the second instance of A, …, the first 
+instance of B, the second instance of B, etc.). The resulting data would appear as 
+in the top of Figure pgs.waves. In this case, when evolution produces a new 
+instance of an allele, the activity diagram will show the start of a new wave 
+because it is a new example of the adaptive evolution of an allele instance. So 
+those new waves do correspond to new adaptations. On the other hand, if we are 
+interested in the evolution of new kinds of allele, then we should attach activity 
+counters to each kind of allele (A, B, C). In this case, when evolution produces a 
+new instance of an allele, the activity diagram will show an increase in slope of 
+an existing wave, as in the bottom of Figure pfs.waves. With each turn of the A-
+B-C cycle, the three waves for A, B, and C would each in turn step upwards and 
+then level out. The only new waves in the diagram would correspond to the 
+origin of the first instance of each kind of allele. As before, the new waves 
+correspond to new adaptations at the level of analysis we have chosen to 
+observe.
+	Our illustrations of the method have involved artificial evolving systems, 
+mainly because it is so easy to get evolutionary activity data from computer 
+models. It is harder to get analogous data from natural systems but it is possible, 
+and the method applies in the same way, regardless of where the data originated. 
+All that is needed is a time series of current evolutionary activity increments for 
+the item being observed. I have measured evolutionary activity statistics in the 
+fossil record, for example, and compared it with evolutionary activity in Evita, 
+and Packard's Bugs (Bedau et al. 1997, 1998).  In an analogous way, a time series 
+of concentrations of RNA species in RNA evolution in flow reactors could be 
+processed to reveal the activity waves of significant adapting RNA species. The 
+same holds for the evolution of almost any other natural evolving system, such 
+as bacterial ecologies. Collecting the relevant data would be hard, but it is within 
+the realm of possibility today. Automated methods for sequencing genomes and 
+measuring gene expression levels will soon provide an unprecedented, detailed 
+picture of gene-level evolutionary activity in natural systems.  
+	Evolution in some natural systems is too slow or inaccessible to produce 
+the data needed for an evolutionary activity analysis. The only real hurdle to 
+measuring evolutionary activity in natural systems is the practical problem of 
+getting enough of the right kind of historical data. This is the familiar sort of 
+practical difficulty that any empirical science must face. 
+	Let me ward off a possible misunderstanding here. Evita and Packard's 
+Bugs are not intended to be realistic simulations of particular biological systems. 
+Although I sometimes refer to them as "models," none are intended to represent 
+another real system. Instead, they are "idea" models, aiming to capture certain 
+abstract principles at work in evolving systems.  They are thought experiments—
+specifically, emergent thought experiments (REF earlier ch). They should be 
+thought of as evolving systems in their own right, with their own idiosyncratic 
+features. So, to study a system's evolutionary activity, it is not necessary to make 
+a model of a system. Instead, activity data is collected directly from the system, 
+just as we did when studying evolutionary activity in Evita and the Bugs. 
+Evolutionary activity data is a way to visualize and quantify the dynamics of the 
+creation of adaptations produced by evolving systems. It is not a way to "model" 
+evolving systems.
+	The evolutionary activity test naturally deals with all the key issues in the 
+debate among Gould and Lewontin and their critics. The test does not assume 
+that traits are adaptations; it applies irrespectively of whether they are 
+adaptations. The test detects the role of natural selection. "Just-so" adaptive 
+stories have no place in this test because the specific adaptive hypotheses that 
+they propose are not at issue. What matters is whether the items in question have 
+so much activity that we have strong evidence they are targets of natural 
+selection. The adaptive presupposition is accepted skeptically and only if 
+demanded by the empirical evolutionary activity evidence.
+
+Red herrings
+
+The debate about adaptationism includes a number of red herrings. One virtue of 
+the evolutionary activity test for adaptations is that it neatly ignores these 
+distractions. For example, much of the literature on adaptationism is preoccupied 
+with whether traits are "optimal" for performing their function and whether 
+optimality models support adaptationism.  Other worries about adaptationism 
+stem from its apparent commitment to "progress" or foreordained and 
+unvarying goals. But it should be obvious that the evolutionary activity method 
+makes no commitment to progress or foreordained goals, and it is agnostic about 
+optimality.
+
+The reverse engineering task of rating alternative designs as better or worse is 
+another red herring. Dennett instructs adaptationists to "look at designs the way 
+engineers do and rate them as better or worse, on a certain set of assumptions 
+about conditions and needs or purposes" (1983, p. 352). It is often unclear, 
+though, what the relevant conditions and needs or purposes are. Consider 
+Packard's Bugs model, for example, which is about as simple as evolutionary 
+systems get. It might seem that we have full knowledge of the conditions and 
+needs of the agents in Packard's model. It certainly is true that studying the 
+computer code will give us complete knowledge of the micro-level details that 
+drive the model. But we might still be ignorant of important emergent properties 
+in the agents' lives. 
+
+For example, we know that cyclic chains of sensory-motor rules are crucial for 
+survival on the little 3x3 blocks, and we know that continual reproduction on the 
+blocks will inevitably lead to some collisions in which agents get bumped out of 
+the sites in their current cycle. We also know that this problem can be solved 
+with additional rules—what I call "drains"—that jump from sites outside the 
+cycle to sites inside the cycle, thus "draining" agents back into the cycle. But 
+without further investigation we don't know whether being bumped out of a 
+cycle is a significant condition in the agents' lives, so we don't know whether 
+drains are important to survival. My point here is that the method of collecting 
+evolutionary activity information avoids all these complications, for this method 
+does not rely on reverse engineering.
+
+Gould and Lewontin complain that adaptationism sometimes conflates an item's 
+current utility with its reason for origin. This is a problem for those who do not 
+count exaptations as adaptations. Exaptations are traits that now perform a 
+function that is not connected with the reason they originated (recall above). 
+Period-lengthening adaptations in Packard's Bugs model furnish us with a 
+simple example of an exaptation. Assume that the population is following a 2-
+cycle with one drain. That is, it has the following three rules:
+
+(a) If you are in the top right corner of a block, go down two steps.
+(b) If you are in the bottom right corner of a block, go up two steps.
+(c) If you are in the center of a block, go up and to the right on the 
+diagonal one step.
+
+Rules (a) and (b) form a 2-cycle, jumping back and forth between the top and 
+bottom right corners. Rule (c) is a drain that captures any agent that gets bumped 
+into the center site and puts it back into the cycle at the top right corner of the 
+block. Let's assume that the drain (c) is used as a drain frequently enough that 
+that natural selection preserves it for this draining function. Now, a mutation 
+from rule (b) to rule (b') will create a 3-cycle:
+
+(b') If you are in the bottom right corner of a block, go up and to the left 
+on the diagonal one step.
+
+This 3-cycle could well sweep through the population as a period-lengthening 
+adaptation, like the examples we saw above. If this happens, notice that the 
+function of rule (c) will change from a more or less irrelevant drain to a crucial 
+component of the 3-cycle. Lengthening the cycle period has a huge adaptive 
+benefit, so rule (c)'s new function of contributing to the 3-cycle will explain why 
+the trait persists through natural selection. Since rule (c)'s current function is not 
+the reason it arose, it is an exaptation. This change in function will show up as a 
+change in its activity wave for rule (c). As a drain its slope was relatively low, but 
+as part of the 3-cycle its slope will be 1/3.  
+
+I mentioned above that I stand with those who classify exaptations among the 
+adaptations, and the activity wave of the exaptation rule (c) explains why. Rule 
+(c) is maintained by natural selection for its crucial rule in the 3-cycle. It persists 
+in the face of mutation pressure as long as it is better than the extant alternatives. 
+So selection for the rule's adaptive function preserves it, which by definition 
+makes it an adaptation. Its activity wave rises at a rate significantly above what 
+you would expect without selection. This shows that the activity test 
+distinguishes current utility from historical origin, and it focuses on a trait's 
+continual activity in the population, just as adaptationism requires.
+
+
+Random genetic drift and neutral evolution
+
+Adaptive explanations are not the only way to account for persistent items in an 
+evolving system. The persistence could be due to genetic drift, architectural 
+constraint, or genetic connections among traits. Gould and Lewontin emphasized 
+that alternatives to adaptive explanations receive only lip service. The activity 
+test alleviates this problem.
+
+Random genetic drift can supplant natural selection in the explanation of certain 
+traits. Genetic drift has been emphasized by the theory of neutral molecular 
+evolution. This theory holds that most of the genetic change at the molecular 
+level is due to chance  or random selection among items that are selectively 
+neutral or nearly neutral. Motoo Kimura, the key architect of this theory, 
+provides this summary (Kimura 1983, p. xi):
+
+The neutral theory asserts that the great majority of evolutionary 
+changes at the molecular level, as revealed by comparative studies 
+of protein and DNA sequences, are caused not by Darwinian 
+selection but by random drift of selectively neutral or nearly 
+neutral mutants. The theory does not deny the role of natural 
+selection in determining the course of adaptive evolution, but it 
+assumes that only a minute fraction of DNA changes in evolution 
+are adaptive in nature, while the great majority of phenotypically 
+silent molecular substitutions exert no significant influence on 
+survival and reproduction and drift randomly through the species.
+
+A classic example of neutral evolution is the different extant alleles for 
+hemoglobin (Kimura 1983, §3.1). Obviously, an allele that prevented the normal 
+functioning of hemoglobin would almost certainly be quite deleterious and it 
+would be removed by natural selection. On the other hand, alleles that produced 
+different but functionally equivalent hemoglobin would be selectively neutral, 
+and natural selection would see no difference between them. So if one such allele 
+replaced another, this would reflect only random genetic drift between them, not 
+natural selection.
+
+Drift affects both whole genotypes and individual genes. We saw examples of 
+drift among genotypes in the Evita system. Figure fig-mu=2.blowup shows 
+random genetic drift among a cloud of neutral variant genotypes, differing by 
+mutations at an unexpressed locus. Similarly, the wiggly waves making up the 
+bulk of Figure fig-mu=10 are caused by drift among selectively-neutral 
+genotypes. In Packard's Bugs the genes that control motion in the desert are 
+largely unused so they tend to evolve by drift. There is also some drift among 
+different cycle drains from the same site. These drifting genes produce little 
+waves along the bottom of activity wave diagrams. Luck has a hand in 
+determining who survives, who dies, who reproduces, and these accidents affect 
+the course of evolution. Drift occurs in virtually all evolving systems, with a 
+force inversely related to population size. It is easy to understand how the 
+accidents have a larger effect in smaller populations.
+
+I should emphasize how evolution in activity neutral models differs from the 
+random genetic drift of neutral evolution. In an activity neutral model, no item 
+has any adaptive value, and selection chooses among them entirely at random. 
+So any evolution among the items is due to pure drift. By contrast, neutral 
+evolution involves a mixture of drift and selection. In genetic drift among 
+selectively neutral alleles, the alleles typically have an adaptive function (recall 
+the hemoglobin example). The vast majority of mutations are lethal or harmful, 
+but the selectively equivalent alleles of neutral evolution typically are beneficial. 
+They all perform some adaptive function equally well and so are selectively 
+equivalent among themselves, but they are not selectively equivalent to the full 
+range of mutations against which they compete. They have a selective advantage 
+over all their deleterious competitors. 
+
+A hypothetical scenario can dramatize the point. Drift among selective 
+equivalents involves a population split into two classes: (A) selectively 
+equivalent adaptive alleles, and (B) maladaptive alleles. Class A alleles have a 
+distinct adaptive advantage over class B alleles. When a class A allele is selected 
+during neutral evolution, there are two questions to ask. One is: Why was this 
+class A allele selected rather than some other class A allele? The answer to this 
+question is chance; random selection is the process at work here. A second 
+question is: Why was a class A allele selected rather than some class B allele? The 
+answer to this question is the adaptive advantage of class A alleles over class B 
+alleles. Natural selection explains why the allele was from class A rather than 
+class B. In this way, neutral evolution of selective equivalents involves both drift 
+and selection. On the other hand, pure drift in activity neutral models makes it 
+impossible to divide the alleles in the population into selectively better and 
+worse classes. All alleles in the neutral model are selectively equivalent, because 
+all selection is random.
+
+So, we have two questions about random genetic drift: one for pure drift and one 
+for drift mixed with selection. It is easy to see that the activity test automatically 
+gives pure drift its due. The neutral models are constructed in such a way that 
+drift has completely free reign. All aspects of selection are random, so survival, 
+death, and reproduction events are all due solely to chance rather than positive 
+or negative adaptive fit. The neutral model is a constructive measure of pure 
+drift in the target system. If the activity of items in the observed system is not 
+significantly greater than the activity seen in the neutral model, then we should 
+question whether the items are adaptations. In this way, the activity method 
+carefully separates pure drift explanations from adaptive explanations.
+
+Mixed drift and selection among selectively equivalent but adaptive items also 
+presents no problem for the activity method, but for a different reason. 
+Identifying adaptations is the activity method's aim. One might worry that 
+significant waves caused by neutral variants are merely the effect of random 
+selection, and so are not new adaptations. But significant activity waves are 
+adaptations, even the waves of neutral variants. The neutral variants are 
+persisting in the system rather than being supplanted by competitors because of 
+their selective advantage. We saw above that neutral evolution is a mixture of 
+natural selection and random drift. Natural selection explains presence of the 
+neutral variants rather than their maladaptive competitors, so the neutral 
+variants are adaptations. 
+
+Recall our discussion above of the type/token distinction between kinds of 
+adaptations and instances of adaptations. A new neutral variant is not a new 
+kind of adaptation but a new instance of an extant kind of adaptation. What kind 
+of activity waves we observe depends on what kind of activity data we collect. If 
+we collect activity data for instances (tokens) of genotypes, for example, then 
+new neutral variant instances will generate new activity waves. Each new wave 
+will correspond to a new example of the items under investigation: instances of 
+genotypes. On the other hand, if we collect activity data for the phenotypic 
+equivalence class which lumps together all the neutral variants, then the activity 
+for all the different neutral variant instances will contribute to one and the same 
+activity wave. The creation of a new neutral variant instances will simply 
+increase the activity of that wave. A significant new wave will signal a new kind 
+of phenotypic adaptation.
+
+Neutral evolution might prompt one remaining worry about the activity test. 
+While new waves for new neutral variants may be new examples of adaptations, 
+these new adaptations are not better than previous dominant adaptations; they 
+are selectively neutral and leave the adaptive status quo unchanged. If one 
+thought that new adaptations must be improvements in adaptive design, then 
+new neutral variants would not be adaptations. But it is a mistake to think that 
+new adaptations must better prior adaptations. An item is an adaptation if its 
+persistence is explained by natural selection for some adaptive benefit it 
+provides. Natural selection can preserve an item because of its adaptive value 
+even if it is no better than some of its predecessors. To be an adaptation an item 
+need not improve on all its competitors, as long as it improves on some and 
+flourishes because of this. In neutral evolution, neutral variants flourish because 
+they improve on the transient maladaptive variants produced by genetic 
+operators like mutation. It might be worth reiterating here that activity 
+information is not intended to reflect how good an adaptation is when compared 
+with other possible or actual adaptations. Instead, it is intended to reflect 
+whether the item is an adaptation or not. So, although the presence of significant 
+activity waves does not distinguish between neutral evolution and non-neutral 
+evolution, that is because both involve the creation of adaptations. 
+
+
+Architectural constraints and hitchhikers
+
+Architectural constraints create evolutionary necessities, items present not 
+because of their adaptive value but because the system's architecture makes 
+alternatives impossible. This issue applies to individual genes and other features 
+of whole organisms, but not to whole genotypes. Architectural constraints in 
+Packard's Bugs model include the number of genes in an agent and the set of 
+possible agent behaviors (a jump between one and fifteen sites in one of the eight 
+compass directions). It would be a mistake to think that it is a nifty adaptation 
+for agents to have one gene per possible sensory state or to move in the eight 
+compass directions. These features are fixed by the system's architecture, so no 
+adaptive explanation should be sought for them.
+
+The activity method handles architectural necessities just as it handles pure drift: 
+neutral models screen them off. For example, if we wondered whether the 
+number of Bug genes was an adaptation, we could collect activity data about it in 
+both the Bugs and in a neutral model that shadowed the Bugs architecturally but 
+was driven only by random selection. When we compared the activity data from 
+the two systems, we would see the same patterns, thus establishing that the 
+number of genes is an architectural constraint rather than an adaptation.
+
+A non-adaptive or even maladaptive trait sometimes persists in an evolving 
+system because it is genetically connected with an adaptive trait. If the benefit of 
+the adaptive trait outweighs the cost of the maladaptive trait, selection for the 
+adaptive trait can preserve the maladaptive trait connected with it, causing 
+selection of the maladaptive trait but not selection for it. The challenge for tests 
+for adaptations is to identify the adaptations among all the traits that are 
+selected. One example of the problem is pleiotropy, in which a gene or gene 
+cluster has more than one phenotypic consequence. A special case of pleiotropy 
+is generative entrenchment (Wimsatt 1986), in which genes are connected in a 
+developmental sequence and so the consequences of genetic modifications 
+cascade developmentally downstream. The general mechanism behind these 
+problems is genetic hitchhiking, in which traits are physically connected in 
+genetic material (for example, by being nearby on a chromosome). In this case, 
+selection for one trait can select everything else in the connected genetic material, 
+allowing a maladaptive trait to "hitchhike" along with the adaptation.
+
+The Bugs model provides a simple example of hitchhiking. Assume that a 
+period-lengthening mutation sweeps through the population, and assume that 
+the agent with the mutation also has a "desert drain"—a sensory-motor rule 
+from a site outside the cycle to the resource desert. The desert drain is 
+maladaptive, since it drains agents off of the resource block. But in Packard's 
+Bugs all genes are on the same "chromosome". So when agents reproduce, unless 
+there is a mutation at the desert drain gene, it will hitchhike along with the 
+period-lengthening mutation and spread through the population. 
+
+Hitchhikers in Bugs agents are rarely expressed. If the hitchhiker were adaptive, 
+then it would provide a benefit if expressed and this benefit would contribute to 
+its persistence in the system, and it would be an adaptation rather than a 
+hitchhiker. Survival is hard enough that any movement that is not helpful is 
+harmful. Furthermore, maladaptive genes are typically lethal, so expressing a 
+maladaptive hitchhiker typically kills the agent, thus removing that hitchhiker 
+from the system. So if we increment a gene's activity only when it is expressed, 
+as we have in the Bugs activity wave diagrams, hitchhikers will make a 
+negligible contribution to activity data. They will never appear in significant 
+activity waves. The adaptationist program can ignore unexpressed hitchhikers 
+because the question whether a trait is an adaptation arises only for expressed 
+traits. So when the activity method is applied to Packard's Bugs, hitchhikers 
+present no problem.
+
+Hitchhikers can present a problem in other systems, though, problems that the 
+activity method does not completely solve. A nonlethal hitchhiker can 
+accumulate significantly more activity than found in a neutral model if hitches a 
+ride on a sufficiently adaptive trait. In this case, the activity of the two traits will 
+exceed that of the neutral model.  So, the mere fact that a given trait has 
+significant excess activity is no proof that that trait is an adaptation. However, 
+this is positive evidence that either it or some connected trait is an adaptation. A 
+cluster of connected traits with significant excess activity is a sure sign of natural 
+selection and adaptations, even though some of the traits might be hitchhiking. 
+Additional information is needed to distinguish the adaptations from the 
+hitchhikers. So, in the presence of pleiotropy, generative entrenchment, or 
+hitchhiking, the activity method shows when adaptive explanations are needed 
+though it might not identify their subject exactly.
+
+
+The novelty of the evolutionary activity test
+
+My solution to problem for adaptationism allows adaptive presuppositions to be 
+adjudicated by the normal procedures of empirical science. Some other responses 
+to Gould and Lewontin similarly construe adaptationism as a contingent thesis 
+to be settled by normal empirical biology (e.g., Brandon 1990, West-Eberhard 
+1992, Sober 1993, Orzack and Sober 1994, and Sterelny and Griffiths 1999). But 
+the evolutionary activity test offers something more than those other responses, 
+because all those other responses are variants of the canonical response (see 
+above). Only the activity test abandons that line. We can see this point nicely if 
+we consider Sober's version of the canonical response. 
+
+The essence of Sober's response is this. To determine whether natural selection 
+explains some trait in some system, you propose a specific hypothesis about the 
+trait's adaptive function and then see whether this hypothesis makes empirical 
+predictions that are hold true for the system in question. Developing the 
+hypothesis involves making a simplified model of the factors at work in the 
+system, including such things as the genetic structure of the system and the 
+strength of genetic drift. Consider a simple example concerning the size 
+differences between the sexes (Sober 1993). In many species males are larger than 
+females on average. One hypothesis to explain this is that large relative male size 
+is an adaptation due to sexual selection—larger males tend to win mates. This 
+simple model predicts that relative male size will be proportional to the sex ratio 
+of breeding groups (number of females per male): Males and females should 
+have roughly equal size in monogamous groups, and in polygamous groups 
+male size should increase with the sex ratio. When Clutton-Brock and Harvey 
+(1977) tested this model in a number of primate groups, they found that the sex 
+ratio of breeding groups correlated with the degree to which males were larger 
+than females. Although the model does not explain why and how the data are 
+scattered above and below the best-fitting regression line, the general trend 
+predicted by the model is borne out by the data.
+
+The crucial difference between Sober's method and the evolutionary activity 
+method is that Sober tests a specific adaptive hypothesis. He constructs a model 
+of the selective forces influencing the specific adaptation, and then checks the 
+predictions of that model. Because Sober is testing a specific model, if the 
+empirical data fail to support that model, he is free to consider and test different 
+models. Failure of some specific adaptive hypotheses does not show that a trait 
+in not an adaptation. So Sober's method can confirm that a trait is an adaptation 
+by confirming a specific adaptive hypothesis, but it cannot disconfirm all 
+possible specific adaptive hypotheses, so it cannot disconfirm any general 
+adaptive hypotheses. By contrast, the evolutionary activity method directly tests 
+general adaptive explanation hypotheses. Failure to pass the activity test cuts off 
+any further search for an adaptive explanation. So the evolutionary activity 
+method answers the question whether the trait is an adaptation, and it does this 
+without making any assumptions about specific adaptive functions.
+
+Sober implies that a general adaptive claim that there exists an adaptive 
+explanation is not falsifiable for it is an existence claim and "existence claims are 
+not falsifiable in Popper's sense" (1993, pp. 129).  Sober's argument is that you 
+can confirm that a trait has an adaptive explanation by providing and 
+corroborating one such explanation, but to falsify the claim involves examining 
+and rejecting all possible adaptive explanations, and this in general is impossible. 
+However, the evolutionary activity method does test exactly what Sober says is 
+impossible to test: whether some item deserves an adaptive explanation. The 
+claim that a trait has an adaptive explanation makes a presupposition—that the 
+trait is an adaptation—and it is this presupposition that the evolutionary activity 
+method tests. So, the evolutionary activity method can falsify the existence claim 
+about adaptive explanations by falsifying the presupposition of all such 
+explanations.
+
+It is important here to ward off a potential misunderstanding about models. 
+Sober's method essentially involves modeling a target system and testing 
+whether the model accurately predicts the target's behavior. Since the model 
+depends on various assumptions about specific adaptive function, the strength of 
+selection, etc., those assumptions can be revised if the model's predictions do not 
+describe the target system. In other words, the method is testing the adequacy of 
+a particular representation of the target system.  The evolutionary activity 
+method does not test a representation of the system; instead, it gathers activity 
+information from the target system and analyzes it. I used the artificial 
+evolutionary models Evita and the Bugs to develop and explain the activity 
+method. But those models are not representations ("models") of some natural 
+system. Rather, they are artificially constructed targets that are investigated in 
+their own right. Our concern is whether those systems themselves exhibited 
+adaptive evolution, not whether they adequately represent adaptive evolution in 
+some other system.
+
+So, the evolutionary activity test's response to the problem of adaptationism is 
+fundamentally different from Sober's response. The two responses are 
+complementary; they just address different questions. The evolutionary activity 
+response addresses the presupposition of the question that Sober addresses. The 
+same general point applies to other proposals for how to empirically test 
+adaptationism (e.g., Brandon 1990, West-Eberhard 1992, Sterelny and Griffiths 
+1999), such as checking for correlation between aspects of traits and aspects of 
+the environment, checking the effects on environmental efficiency of altering 
+traits, and comparing the environmental success of naturally occurring variants 
+with respect to traits. These methods can all shed valuable light on whether a 
+trait is an adaptation, but they do so by exploring specific adaptive hypotheses. 
+The evolutionary activity method can be applied whether or not one knows 
+about specific  adaptive functions. These other methods complement the 
+evolutionary activity method, which is prior and more fundamental. 
+
+
+Conclusion
+	The evolutionary activity test directly addresses the fundamental problem 
+of adaptationism raised by Gould and Lewontin. It provides a new empirical 
+method for determining when adaptive presuppositions are true, i.e., a new way 
+to tell when it is appropriate to seek an adaptive explanation, or in other words, a 
+new empirical test for general adaptive hypotheses. 
+	My new response to Gould and Lewontin contrasts with the canonical 
+response. It refutes rather than concedes the fundamental challenge to the 
+testability of general adaptive hypotheses, and it makes the question whether 
+something is an adaptation objective and empirical rather than conceptual and 
+methodological. It does not require or encourage us to treat adaptive 
+presuppositions as if they were true. Indeed, sometimes they are false, and the 
+activity data show this. When activity data justify taking the adaptive stance, the 
+stance is adopted critically and on the basis of empirical evidence against 
+nonadaptive alternatives. 
+	The canonical response defends the status quo in evolutionary biology, 
+urging that adaptationist explanations today (with some exceptions) are largely 
+adequate and legitimate. The evolutionary activity test departs from the status 
+quo, proposing a way to collect a new kind of empirical evidence about whether 
+adaptive explanations are in the offing. This provides a fundamentally new tool 
+with which adaptationists can defend the practice of seeking adaptive 
+explanations. Of course, anti-adaptationists can also use the same tool to show 
+that adaptive explanations are not in the offing. Applying the evolutionary 
+activity test makes no presupposition about whether the traits in question are 
+adaptations; instead, that is precisely what is being tested.
+	Gould and Lewontin said that they "would not object so strenuously to 
+the adaptationist programme if its invocation, in any particular case, could lead 
+in principle to its refutation for want of evidence" (1979, pp. 258f). The 
+evolutionary activity method provides just the sort of tool Gould and Lewontin 
+sought.  Analysis of evolutionary activity data allows us to pursue the 
+adaptationist program critically and constructively.
+
+
+NOTES (chapter 4)
+ Some (e.g., Gould and Lewontin, Williams 1966) have suggested that a trait could be 
+selected for without being an adaptation, but I find Sober (1984) refutation of this suggestion 
+convincing.
+  Natural selection must be distinguished from so-called "sexual" selection—the process 
+by which a trait is selected for its attractiveness to mates. I side with those who classify sexual 
+selection as a kind of natural selection. So, for me, a product of sexual selection, such as the 
+peacock's extravagant tail, is an adaptation, even though it is may be detrimental to survival, 
+because it increases reproductive success. For more on the controversy about sexual selection, see 
+Cronin (1992) and Spencer and Masters (1992). 
+  We should not assume that what we ordinarily think of as traits are really traits; this 
+might be an open question.
+  Strictly speaking, the word "adaptive" is used where some other word like 
+"adaptationist" should be used. For example, adaptive explanations decidedly do not explain 
+why something is merely adaptive; they explain how it is an adaptation. Similarly, adaptive 
+evolution is the creation of adaptations, not merely adaptive items. I will usually follow common 
+usage, however, rather than try to enforce strictly correct but unfamiliar terminology. 
+  Peter Godfrey-Smith (2001) first distinguished these theses. I've given some of them 
+new names.
+  Another kind of alternative explanation follows from the extraneous accidents of 
+reproduction and survival that can cause random fluctuations in traits, especially in smaller 
+populations. When these fluctuations cause traits to randomly drift to fixation or extinction, the 
+trait's presence or absence is not an adaptation but a product of random genetic drift. Allometry 
+and genetic drift are just two of the possible alternative kinds of explanations: Gould and 
+Lewontin also mention developmental constraints, genetic linkage, epistasis, and pleiotropy.
+  Dawkins and Dennett are just two illustrations of the canonical response to Gould's and 
+Lewontin's fundamental complaint against the adaptationist program; there are many others. 
+Ernst Mayr thinks that evolutionary change is the result of two causal mechanisms: chance and 
+selection. Mayr thinks that, while particular adaptive hypotheses can be falsified, one can never 
+directly prove that chance explains some biological phenomenon or process. Instead, one can 
+show the hand of chance only indirectly and "tentatively" (Mayr 1983, p. 151), by ruling out all 
+adaptive explanations that have been considered so far. As Kitcher puts it, Mayr thinks that 
+selection "is the only game in town" (1985, p. 233). But if it is impossible to test whether chance 
+explains some trait, then it is impossible to settle whether the trait is an adaptation. Thus, the 
+fundamental presupposition of adaptive explanations cannot be tested, so Mayr in effect accepts 
+Gould and Lewontin's fundamental criticism. But Mayr considers this to be normal scientific 
+practice: "the strategy to try another hypothesis when the first fails is a traditional methodology 
+in all branches of science" (1983, p. 151). 
+Alexander Rosenberg (1985) emphasizes that the theory of natural selection is an 
+extremal theory, like Newtonian mechanics or quantum mechanics, in that it treats the objects in 
+its domain as behaving in such a way as to maximize or minimize the values of certain variables. 
+
+In the theory of natural selection, the [extremal] strategy is exemplified in the assumption 
+that the environment acts so as to maximize the rate of proportional increase of the fittest 
+hereditarily-similar subset of a species. This strategy is crucial to the success of these 
+theories because of the way it directs and shapes the research and applications that are 
+motivated by the theories. Thus, we hold that a system always acts to maximize the value 
+of some mechanical variable. If our measurements of the value of that variable in a 
+experimental or observational setting diverge from the predictions of the theory and the 
+initial conditions, we never infer that the system is failing to maximize the value of the 
+variable in question. Rather, we assume that our specification of the constraints under 
+which it is actually operating is incomplete. (p. 238) 
+
+Rosenberg thinks that the extremal character of the theory of natural selection explains and 
+redeems those features of adaptationism that Gould and Lewontin find objectionable. 
+
+… Gould and Lewontin's criticism of the adaptationalist program reflects real and 
+unavoidable features of the theory that animates it: The refutation of one adaptationalist 
+"story" does result in the provision of another; the failure to find any is considered a 
+scientist's failure, not a theoretical falsification…. There is nothing methodologically 
+wrong with constructing a new adaptationalist explanation of a given "form, function, or 
+behavior" when an older one has been rejected; indeed, the theory of natural selection 
+requires it by virtue of its extremal character. (p. 240)
+
+Rosenberg's response exactly fits the canon: He concedes that adaptive presuppositions are not 
+tested but explains this away as normal scientific practice.
+Note that Mayr's and Rosenberg's positions have the characteristic drawback of the 
+canonical response: They do not solve the problem of adaptationism, for neither explains how we 
+can determine when natural selection should be invoked. For example, the extremal character of 
+the theory of natural selection does nothing to indicate when it is appropriate to deploy that 
+theory.
+  See Bedau and Packard 1992, Bedau 1995, Bedau 1996a, Bedau and Brown 1997, Bedau, 
+Snyder, Brown, and Packard 1997, Bedau, Snyder, and Packard 1998, Bedau, Joshi, and Lilly 1999, 
+Rechtsteiner and Bedau 1999a,b.
+  John Beatty investigated the use of random drift models in the adaptationism debate, 
+and he concluded that the case for viewing drift as a null hypothesis for natural selection "is, at 
+best, very messy" (1987, p. 54). But he admits that predictions based on drift hypotheses can be 
+standard null hypotheses. For example, the hypothesis that the evolution of some item in some 
+system is primarily a matter of random drift would predict a certain probability distribution of 
+activity data—exactly the distribution produced by a neutral model. The null hypothesis is that 
+the activity observed in the target system will be taken from the same distribution. So, Beatty's 
+skepticism about drift hypotheses does not undermine the activity test's use of pure drift models.
+  Lewontin should support the evolutionary activity test, because he has pointed out 
+(REF??) that observations of allele frequencies can show whether the trait encoded is the result of 
+the process of selection. However, Lewontin does not work out the details of gathering data at 
+different levels of analysis and screening it with neutral models, and using these data to analyze 
+the dynamical details of how successive adaptations arise.
+  This section is adapted from Bedau and Brown (1999), where further details can be 
+found.
+  Evita, created by C.Titus Brown, is a simplified version of Tierra (Ray 1992) and its 
+derivative Avida (Adami and Brown 1994).
+  The probability that a given program suffers a mutation somewhere is proportional to 
+its length. While the probability that a given program is mutated is independent of the size of the 
+population of programs, the probability that a mutation occurs somewhere in the population is 
+obviously proportional to the population size. Typically, mutation rates are specified in terms of 
+10-5 mutations per time step: that is, a mutation rate of m would mean that a given codon would 
+mutate on average once every 105/m time steps.  This means, for example, that in a run with 1600 
+creatures with an average length of 30 instructions, a mutation rate of 1 would cause one 
+mutation somewhere in the population approximately every other time step.
+  Shorter programs are more resistant to mutations (recall above), so a program's length 
+influences its copy fidelity and, thus, its representation in future generations. Thus, reproduction 
+rate is not a perfect measure of evolutionary success.  Nevertheless, at the mutation rates used 
+here, evolutionary success overwhelmingly reflects reproduction rate, so our definition of fitness 
+is more than adequate for present purposes. When fitness values are displayed below, we define 
+fitness as 30 times reproduction rate to prevent them from being inconveniently small. So, for 
+example, a genotype that reproduces in 100 instructions has a reproduction rate of 0.01 and a 
+fitness of 0.3.
+  The grid size was 40 x 40, so when the grid filled up the population consisted of about 
+1600 self-reproducing programs. I have pruned out irrelevant data about transitory genotypes by 
+graphing only those genotypes that had at least five instances in the population at some time. 
+This removes some of the "little hairs" created by nonadaptive noise.
+  The other salient difference between the normal and neutral runs—that the ancestral 
+genotype persists about four times longer in the neutral run—is due to the fact that, since the 
+neutral ancestral genotype need never compete with better adapted genotypes, its initial 
+numerical advantage as ancestor carries more weight.
+  This difference between the normal and neutral activity data can be used to quantify 
+the adaptive evolutionary activity in evolving systems. See below.
+  Shortly before this the genotype 24bqf acquired a slight fitness advantage by partially 
+unrolling the loop.
+  The gist of this section can be gleaned from the figures.
+  See Packard 1989, Bedau & Packard 1992, Bedau, Ronneburg & Zwick 1992, Bedau & 
+Bahm 1994, Bedau 1994, Bedau & Seymour 1994, Bedau 1995, Bedau, Snyder, Brown & Packard 
+1997.
+  Actually, two different waves originate close together. Both waves contain activity for 
+exactly the same genes (described in the text). This is a case of two independent originations of 
+the same adaptation.
+  The same problems can arise at other levels of analysis, such as genotypes. An 
+analogous problem arises when there is a succession of "new" alleles that are neutral variants. 
+This issue is discussed  below. 
+  It is probably easier to gather evolutionary activity information about evolution in non-
+biological natural systems. A wealth of information about cultural and technological evolution is 
+reflected in patent records, financial transaction data, newspaper stories, and the like. Such data 
+are increasingly available in electronic form, making it relatively easy to apply an evolutionary 
+activity analysis.
+  Evolution in real-world cultural and technological systems is a promising target for this 
+method, since it is relatively easy to get the relevant data.
+  See, e.g., the papers in Dupré (19XX).
+  Note that the examples of wave slope changes at period-lengthening events  which we 
+saw above are another kind of exaptation. A rule that had a function as part of an N-cycle now 
+has a function as part of an N+1-cycle. The same holds for rule (a) in the present example.
+  There are various ways in which activity information does discriminate between 
+neutral and non-neutral evolution. We saw above that activity waves in neutral evolution have a 
+characteristic qualitative signature in systems like Evita. The random fluctuations in the 
+concentration of a genotype drifting among neutral variants causes a characteristic wiggly wave 
+form, which is quite different from the characteristic sigmoidal form of non-neutral adaptations. 
+Quantitative analysis of activity data can also discriminate between neutral evolution and non-
+neutral evolution. A system with a lot of neutral variants will have heightened intensity of 
+activity but lessened extent of activity, in comparison with a similar system that lacks neutral 
+variants, although the sum of intensity and extent of activity in these systems will be the same.
+  Although Sober focuses on panadaptionism and a variety of weaker theses, his 
+approach naturally generalizes to a defense of adaptationism.
+  Sober (1993, Orzack and Sober 1994) point out that if you confirm enough specific 
+adaptive hypotheses about individual traits, then you can build up evidence for 
+panadaptationism (and thus for adaptationism). But the process of gathering the requisite 
+evidence would be extremely time consuming, requiring the entire careers of many biologists.
+  Of course, the activity method does use neutral models to filter the activity information 
+from target systems. Making a neutral model of a target system requires making various 
+assumptions about the target system, for the neutral model must be just like the target except that 
+it has random selection where the target might have natural selection. But once an appropriate 
+neutral model has been constructed, the modelling process is over. The activity method uses the 
+same neutral model to analyze many evolutionary histories in a given target system. This neutral 
+model cannot be revised in response to a failed test of the adaptive presupposition.
+  For helpful comments or discussion, thanks to Peter Godfrey-Smith, Tom Ryckman, 
+Chris Stephens, Phil Anderson, as well as audiences at the University of Oklahoma, the 
+University of Washington, Washington University, the Center for Humanities at Oregon State 
+University, the Center for Cognitive Studies at Tufts University, the Santa Fe Institute, the first 
+Genetic and Evolutionary Computation Conference, the fourth European Conference on Artificial 
+Life, and Artificial Life VI.
+M. A. Bedau, printed 9/8/09, page 40
+

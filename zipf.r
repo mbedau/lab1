@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# Zipf law plot, Noah Pepper
+# Reed, Phil 412
+=======
+>>>>>>> 1a2f2e473cd51669d809dc0ee695e243feaa97a6
 args <- commandArgs(TRUE)
 pdf(paste(args[1],'.pdf',sep=''))
 for (f in args){
